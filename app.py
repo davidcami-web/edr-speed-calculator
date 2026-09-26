@@ -484,9 +484,9 @@ VEHICLES_DB = {
 # SELECTOR DE IDIOMA EN BARRA LATERAL
 # ==========================================
 lang_options = {
+    "English": "en",
     "Español": "es",
     "Català": "ca",
-    "English": "en",
     "Italiano": "it"
 }
 selected_lang_label = st.sidebar.selectbox("🌐 Idioma / Language / Llengua / Lingua", list(lang_options.keys()), index=0)
