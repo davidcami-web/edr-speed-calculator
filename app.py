@@ -538,7 +538,7 @@ VEHICLES_DB = {
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [48.0, 67.3, 87.8, 106.2, 128.1],
         "diff": [1.4, 1.9, 1.1, 2.5, 0.4],
-        "sd": [0.4, 0.3, 1.0, 0.4, 1.2]
+        "sd": [0.38, 0.3, 1.0, 0.4, 1.2]
     },
     "4": {
         "name": "BMW iX1 xDrive30 (2024)",
@@ -741,7 +741,8 @@ def interpolate_test_data(vehicle_key, v_edr):
         diff_interp = float(np.interp(v_edr, speeds, diffs))
         sd_interp = float(np.interp(v_edr, speeds, sds))
 
-    return diff_interp, sd_interp
+    # Mantener precisión técnica de al menos 4 decimales para los cálculos intermedios
+    return round(diff_interp, 4), round(sd_interp, 4)
 
 def get_vehicle_name(key, lang):
     v = VEHICLES_DB[key]
@@ -979,8 +980,8 @@ breakdown_data = {
         f"[{v_edr_min:.1f} — {v_edr_max:.1f}] km/h",
         f"Ratio 1 = {ratio1:.4f} (Circ: {c_crash_fitted:.1f} vs {c_test_fitted:.1f} mm)",
         f"Ratio 2 = {ratio2:.4f} (Circ: {c_crash_prog:.1f} vs {c_test_prog:.1f} mm)",
-        f"-{diff_exp:.2f} km/h (a {v_edr_input:.0f} km/h)",
-        f"±{(2.0*sd_exp + vbox_acc):.2f} km/h (95% CI)",
+        f"-{diff_exp:.4f} km/h (a {v_edr_input:.1f} km/h)",
+        f"±{(2.0*sd_exp + vbox_acc):.4f} km/h (SD = {sd_exp:.4f}, 95% CI)",
         f"[{v_real_min:.2f} — {v_real_max:.2f}] km/h"
     ],
     t["col_effect"]: [
