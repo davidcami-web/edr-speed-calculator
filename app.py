@@ -533,8 +533,8 @@ VEHICLES_DB = {
     "3": {
         "name": "BMW i4 eDrive40 (2024)",
         "year": 2024,
-        "fitted_test": "225/55 R17",
-        "prog_test": "225/50 R18",
+        "fitted_test": "245/40 R19",
+        "prog_test": "255/45 R18",
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [48.0, 67.3, 87.8, 106.2, 128.1],
         "diff": [1.4, 1.9, 1.1, 2.5, 0.4],
@@ -787,16 +787,19 @@ st.sidebar.subheader(t["tire_section"])
 
 use_custom_tires = st.sidebar.checkbox(t["customize_tires"], value=True)
 
+def_w_f, def_a_f, def_r_f = parse_tire_str(veh_info["fitted_test"])
+def_w_p, def_a_p, def_r_p = parse_tire_str(veh_info["prog_test"])
+
 if use_custom_tires:
     col_t1, col_t2 = st.sidebar.columns(2)
     with col_t1:
-        w_fit = st.number_input(t["w_fit"], 135, 335, 225, 5)
-        a_fit = st.number_input(t["a_fit"], 25, 80, 50, 5)
-        r_fit = st.number_input(t["r_fit"], 13, 23, 17, 1)
+        w_fit = st.number_input(t["w_fit"], 135, 335, int(def_w_f), 5, key=f"wf_{selected_key}")
+        a_fit = st.number_input(t["a_fit"], 25, 80, int(def_a_f), 5, key=f"af_{selected_key}")
+        r_fit = st.number_input(t["r_fit"], 13, 23, int(def_r_f), 1, key=f"rf_{selected_key}")
     with col_t2:
-        w_prog = st.number_input(t["w_prog"], 135, 335, 205, 5)
-        a_prog = st.number_input(t["a_prog"], 25, 80, 60, 5)
-        r_prog = st.number_input(t["r_prog"], 13, 23, 16, 1)
+        w_prog = st.number_input(t["w_prog"], 135, 335, int(def_w_p), 5, key=f"wp_{selected_key}")
+        a_prog = st.number_input(t["a_prog"], 25, 80, int(def_a_p), 5, key=f"ap_{selected_key}")
+        r_prog = st.number_input(t["r_prog"], 13, 23, int(def_r_p), 1, key=f"rp_{selected_key}")
     
     crash_fitted_str = f"{w_fit}/{a_fit} R{r_fit}"
     crash_prog_str = f"{w_prog}/{a_prog} R{r_prog}"
