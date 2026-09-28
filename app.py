@@ -21,6 +21,20 @@ st.set_page_config(
 # ==========================================
 TRANSLATIONS = {
     "es": {
+        "admin_header": "🔐 Administración: Añadir Nuevo Vehículo",
+        "admin_pass_label": "🔑 Contraseña de acceso:",
+        "admin_unlock_btn": "Desbloquear Panel Admin",
+        "admin_form_title": "➕ Registro de Nuevo Vehículo de Ensayo",
+        "admin_veh_name": "Marca y Modelo (ej. Tesla Model 3)",
+        "admin_veh_year": "Año de Modelo",
+        "admin_fitted_tire": "Neumático Montado en Test (ej. 235/45 R18)",
+        "admin_prog_tire": "Neumático Programado ECU (ej. 235/45 R18)",
+        "admin_save_btn": "💾 Guardar Vehículo en Base de Datos",
+        "admin_success_msg": "¡Vehículo '{name}' registrado con éxito!",
+        "admin_wrong_pass": "❌ Contraseña incorrecta. Inténtalo de nuevo.",
+        "admin_pass_ok": "🔓 Acceso concedido.",
+        "admin_custom_badge": " (Personalizado / Custom)",
+
         "title": "🚗 Calibrador de Velocidad Real EDR",
         "subtitle": "**Herramienta Pericial de Cuantificación de Velocidad Real EDR (Reglamentos UN R160 / UN R39)**\n\n*Basado en la investigación científica de **Mattia Sillo, Matteo Villaraggia y David Camí González** (Congreso Europeo EVU Žilina 2026).*",
         "sidebar_header": "📋 Datos de Entrada EDR y Vehículo",
@@ -90,6 +104,20 @@ TRANSLATIONS = {
         "pdf_just": "El calculo contempla las 4 fuentes de error definidas en el estudio:\n1. Truncamiento de digitalizacion de 1 km/h segun UN R160.\n2. Correccion geometrica dual de neumaticos (ratio de circunferencia montada / programada).\n3. Offset empirico medido con VBOX en condiciones de circulacion estable.\n4. Intervalo de confianza estadistico del 95% (2xSD + precision VBOX).\n\nConclusion: La velocidad reportada por el EDR sobreestima la velocidad real del vehiculo en condiciones estables, habiendose acotado el margen real de circulacion."
     },
     "ca": {
+        "admin_header": "🔐 Administració: Afegir Nou Vehicle",
+        "admin_pass_label": "🔑 Contrasenya d'accés:",
+        "admin_unlock_btn": "Desbloquejar Panell Admin",
+        "admin_form_title": "➕ Registre de Nou Vehicle d'Assaig",
+        "admin_veh_name": "Marca i Model (ex. Tesla Model 3)",
+        "admin_veh_year": "Any de Model",
+        "admin_fitted_tire": "Pneumàtic Muntat en Test (ex. 235/45 R18)",
+        "admin_prog_tire": "Pneumàtic Programat ECU (ex. 235/45 R18)",
+        "admin_save_btn": "💾 Desar Vehicle a la Base de Dades",
+        "admin_success_msg": "Vehicle '{name}' registrat amb èxit!",
+        "admin_wrong_pass": "❌ Contrasenya incorrecta. Torna-ho a provar.",
+        "admin_pass_ok": "🔓 Accés concedit.",
+        "admin_custom_badge": " (Personalitzat)",
+
         "title": "🚗 Calibrador de Velocitat Real EDR",
         "subtitle": "**Eina Pericial de Quantificació de Velocitat Real EDR (Reglaments UN R160 / UN R39)**\n\n*Basat en la investigació científica de **Mattia Sillo, Matteo Villaraggia i David Camí González** (Congrés Europeu EVU Žilina 2026).*",
         "sidebar_header": "📋 Dades d'Entrada EDR i Vehicle",
@@ -159,6 +187,20 @@ TRANSLATIONS = {
         "pdf_just": "El càlcul contempla les 4 fonts d'error definides en l'estudi:\n1. Truncament de digitalització de 1 km/h segons la UN R160.\n2. Correcció geomètrica dual de pneumàtics (ràtio de circumferència muntada / programada).\n3. Desfasament empíric mesurat amb VBOX en condicions de circulació estable.\n4. Interval de confiança estadístic del 95% (2xSD + precisió VBOX).\n\nConclusió: La velocitat reportada per l'EDR sobreestima la velocitat real del vehicle en condicions estables, havent-se delimitat el marge real de circulació."
 },
     "en": {
+        "admin_header": "🔐 Administration: Add New Test Vehicle",
+        "admin_pass_label": "🔑 Access Password:",
+        "admin_unlock_btn": "Unlock Admin Panel",
+        "admin_form_title": "➕ Register New Test Vehicle",
+        "admin_veh_name": "Make and Model (e.g. Tesla Model 3)",
+        "admin_veh_year": "Model Year",
+        "admin_fitted_tire": "Test Fitted Tire (e.g. 235/45 R18)",
+        "admin_prog_tire": "Test ECU Programmed Tire (e.g. 235/45 R18)",
+        "admin_save_btn": "💾 Save Vehicle to Database",
+        "admin_success_msg": "Vehicle '{name}' successfully registered!",
+        "admin_wrong_pass": "❌ Incorrect password. Please try again.",
+        "admin_pass_ok": "🔓 Access granted.",
+        "admin_custom_badge": " (Custom)",
+
         "title": "🚗 EDR True Speed Calibrator",
         "subtitle": "**Forensic Quantification Tool for EDR True Speed (UN R160 / UN R39 Regulations)**\n\n*Based on scientific research by **Mattia Sillo, Matteo Villaraggia, and David Camí González** (European EVU Congress Žilina 2026).*",
         "sidebar_header": "📋 EDR & Vehicle Input Data",
@@ -228,6 +270,20 @@ TRANSLATIONS = {
         "pdf_just": "The calculation accounts for the 4 error sources defined in the study:\n1. 1 km/h digitization truncation per UN R160.\n2. Dual geometric tire correction (fitted / programmed circumference ratio).\n3. Empirical offset measured with VBOX under steady-state driving conditions.\n4. 95% statistical confidence interval (2xSD + VBOX accuracy).\n\nConclusion: Reported EDR speed overestimates steady-state true speed, yielding a defensible true speed range."
     },
     "it": {
+        "admin_header": "🔐 Amministrazione: Aggiungi Nuovo Veicolo",
+        "admin_pass_label": "🔑 Password di accesso:",
+        "admin_unlock_btn": "Sblocca Pannello Admin",
+        "admin_form_title": "➕ Registrazione Nuovo Veicolo Test",
+        "admin_veh_name": "Marca e Modello (es. Tesla Model 3)",
+        "admin_veh_year": "Anno Modello",
+        "admin_fitted_tire": "Pneumatico Montato nel Test (es. 235/45 R18)",
+        "admin_prog_tire": "Pneumatico Programmato ECU (es. 235/45 R18)",
+        "admin_save_btn": "💾 Salva Veicolo nel Database",
+        "admin_success_msg": "Veicolo '{name}' registrato con successo!",
+        "admin_wrong_pass": "❌ Password errata. Riprova.",
+        "admin_pass_ok": "🔓 Accesso consentito.",
+        "admin_custom_badge": " (Personalizzato)",
+
         "title": "🚗 Calibratore di Velocità Reale EDR",
         "subtitle": "**Strumento Peritale di Quantificazione della Velocità Reale EDR (Regolamenti UN R160 / UN R39)**\n\n*Basato sulla ricerca scientifica di **Mattia Sillo, Matteo Villaraggia e David Camí González** (Congresso Europeo EVU Žilina 2026).*",
         "sidebar_header": "📋 Dati di Input EDR e Veicolo",
@@ -297,6 +353,20 @@ TRANSLATIONS = {
         "pdf_just": "Il calcolo tiene conto delle 4 fonti di errore definite nello studio:\n1. Troncamento di digitalizzazione di 1 km/h secondo UN R160.\n2. Correzione geometrica doppia dei pneumatici (rapporto circonferenza montata / programmata).\n3. Offset empirico misurato con VBOX in condizioni di circolazione stabile.\n4. Intervallo di confidenza statistico del 95% (2xSD + precisione VBOX).\n\nConclusione: La velocita riportata dall'EDR sovrastima la velocita reale in condizioni stabili."
     },
     "ro": {
+        "admin_header": "🔐 Administrare: Adaugă Vehicul Nou",
+        "admin_pass_label": "🔑 Parolă de acces:",
+        "admin_unlock_btn": "Deblochează Panoul Admin",
+        "admin_form_title": "➕ Înregistrare Vehicul Nou de Test",
+        "admin_veh_name": "Marcă și Model (ex. Tesla Model 3)",
+        "admin_veh_year": "An Model",
+        "admin_fitted_tire": "Anvelopă Montată la Test (ex. 235/45 R18)",
+        "admin_prog_tire": "Anvelopă Programată ECU (ex. 235/45 R18)",
+        "admin_save_btn": "💾 Salvează Vehiculul în Baza de Date",
+        "admin_success_msg": "Vehiculul '{name}' a fost înregistrat cu succes!",
+        "admin_wrong_pass": "❌ Parolă incorectă. Încearcă din nou.",
+        "admin_pass_ok": "🔓 Acces permis.",
+        "admin_custom_badge": " (Personalizat)",
+
         "title": "🚗 Calibrator de Viteză Reală EDR",
         "subtitle": "**Instrument Judiciar de Cuantificare a Vitezei Reale EDR (Reglementările UN R160 / UN R39)**\n\n*Bazat pe cercetarea științifică a autorilor **Mattia Sillo, Matteo Villaraggia și David Camí González** (Congresul European EVU Žilina 2026).*",
         "sidebar_header": "📋 Date de Intrare EDR și Vehicul",
@@ -366,6 +436,20 @@ TRANSLATIONS = {
         "pdf_just": "Calculul ia in considerare cele 4 surse de eroare definite in studiu:\n1. Trunchiere de digitalizare de 1 km/h conform UN R160.\n2. Corectie geometrica dubla a anvelopelor (raport circumferinta montata / programata).\n3. Abatere empirica masurata cu VBOX in regim stabil de deplasare.\n4. Interval de incredere statistic de 95% (2xSD + precizie VBOX).\n\nConcluzie: Viteza raportata de EDR supraestimeaza viteza reala in regim stabil, oferind un interval aparabil."
 },
     "nl": {
+        "admin_header": "🔐 Beheer: Nieuw Testvoertuig Toevoegen",
+        "admin_pass_label": "🔑 Toegangswachtwoord:",
+        "admin_unlock_btn": "Admin Paneel Ontgrendelen",
+        "admin_form_title": "➕ Registreer Nieuw Testvoertuig",
+        "admin_veh_name": "Merk en Model (bijv. Tesla Model 3)",
+        "admin_veh_year": "Bouwjaar",
+        "admin_fitted_tire": "Gemonteerde Band bij Test (bijv. 235/45 R18)",
+        "admin_prog_tire": "Geprogrammeerde Band ECU (bijv. 235/45 R18)",
+        "admin_save_btn": "💾 Voertuig Opslaan in Database",
+        "admin_success_msg": "Voertuig '{name}' succesvol geregistreerd!",
+        "admin_wrong_pass": "❌ Onjuist wachtwoord. Probeer het opnieuw.",
+        "admin_pass_ok": "🔓 Toegang verleend.",
+        "admin_custom_badge": " (Aangepast)",
+
         "title": "🚗 EDR Werkelijke Snelheid Calibrator",
         "subtitle": "**Forensisch Instrument voor Kwantificering van EDR Werkelijke Snelheid (UN R160 / UN R39 Reglementen)**\n\n*Gebaseerd op wetenschappelijk onderzoek van **Mattia Sillo, Matteo Villaraggia en David Camí González** (Europees EVU Congres Žilina 2026).*",
         "sidebar_header": "📋 EDR & Voertuig Invoergegevens",
@@ -435,6 +519,20 @@ TRANSLATIONS = {
         "pdf_just": "De berekening houdt rekening met de 4 foutenbronnen uit de studie:\n1. 1 km/h digitaliseringsafronding volgens UN R160.\n2. Dubbele geometrische bandencorrectie (verhouding gemonteerde / geprogrammeerde omtrek).\n3. Empirische afwijking gemeten met VBOX bij constante rijomstandigheden.\n4. 95% statistisch betrouwbaarheidsinterval (2xSD + VBOX nauwkeurigheid).\n\nConclusie: De gerapporteerde EDR-snelheid overschat de werkelijke snelheid bij constante rit."
 },
     "de": {
+        "admin_header": "🔐 Verwaltung: Neues Testfahrzeug Hinzufügen",
+        "admin_pass_label": "🔑 Zugangspasswort:",
+        "admin_unlock_btn": "Admin Panel Freischalten",
+        "admin_form_title": "➕ Neues Testfahrzeug Registrieren",
+        "admin_veh_name": "Marke und Modell (z.B. Tesla Model 3)",
+        "admin_veh_year": "Modelljahr",
+        "admin_fitted_tire": "Montierter Reifen im Test (z.B. 235/45 R18)",
+        "admin_prog_tire": "Programmierter Reifen ECU (z.B. 235/45 R18)",
+        "admin_save_btn": "💾 Fahrzeug in Datenbank Speichern",
+        "admin_success_msg": "Fahrzeug '{name}' erfolgreich registriert!",
+        "admin_wrong_pass": "❌ Falsches Passwort. Bitte erneut versuchen.",
+        "admin_pass_ok": "🔓 Zugang gewährt.",
+        "admin_custom_badge": " (Benutzerdefiniert)",
+
         "title": "🚗 EDR Realle Geschwindigkeits-Kalibrierer",
         "subtitle": "**Forensisches Werkzeug zur Quantifizierung der realen EDR-Geschwindigkeit (UN R160 / UN R39 Regelungen)**\n\n*Basierend auf der wissenschaftlichen Forschung von **Mattia Sillo, Matteo Villaraggia und David Camí González** (Europäischer EVU-Kongress Žilina 2026).*",
         "sidebar_header": "📋 EDR & Fahrzeug-Eingabedaten",
@@ -699,6 +797,16 @@ lang_options = {
     "Nederlands": "nl",
     "Deutsch": "de"
 }
+
+# ==========================================
+# INICIALIZACIÓN DE ESTADO DE SESIÓN (SESSION STATE)
+# ==========================================
+if "custom_vehicles" not in st.session_state:
+    st.session_state.custom_vehicles = {}
+
+if "admin_authenticated" not in st.session_state:
+    st.session_state.admin_authenticated = False
+
 selected_lang_label = st.sidebar.selectbox("🌐 Idioma / Language / Llengua / Lingua", list(lang_options.keys()), index=0)
 lang_code = lang_options[selected_lang_label]
 t = TRANSLATIONS[lang_code]
@@ -726,7 +834,8 @@ def calc_tire_geometry(width, aspect, rim):
     return diameter_mm, circumference_mm
 
 def interpolate_test_data(vehicle_key, v_edr):
-    v_data = VEHICLES_DB[vehicle_key]
+    ALL_VEHICLES_DB = {**VEHICLES_DB, **st.session_state.custom_vehicles}
+    v_data = ALL_VEHICLES_DB[vehicle_key]
     speeds = np.array(v_data["speeds"])
     diffs = np.array(v_data["diff"])
     sds = np.array(v_data["sd"])
@@ -745,7 +854,8 @@ def interpolate_test_data(vehicle_key, v_edr):
     return round(diff_interp, 4), round(sd_interp, 4)
 
 def get_vehicle_name(key, lang):
-    v = VEHICLES_DB[key]
+    ALL_VEHICLES_DB = {**VEHICLES_DB, **st.session_state.custom_vehicles}
+    v = ALL_VEHICLES_DB[key]
     if key == "GENERIC":
         return v["name_keys"].get(lang, v["name_keys"]["es"])
     return v["name"]
@@ -771,7 +881,8 @@ v_edr_input = st.sidebar.number_input(
     help=t["v_edr_help"]
 )
 
-veh_keys = list(VEHICLES_DB.keys())
+ALL_VEHICLES_DB = {**VEHICLES_DB, **st.session_state.custom_vehicles}
+veh_keys = list(ALL_VEHICLES_DB.keys())
 veh_names = [get_vehicle_name(k, lang_code) for k in veh_keys]
 
 selected_veh_idx = st.sidebar.selectbox(
@@ -781,7 +892,7 @@ selected_veh_idx = st.sidebar.selectbox(
     index=2
 )
 selected_key = veh_keys[selected_veh_idx]
-veh_info = VEHICLES_DB[selected_key]
+veh_info = ALL_VEHICLES_DB[selected_key]
 selected_veh_name = get_vehicle_name(selected_key, lang_code)
 
 st.sidebar.subheader(t["tire_section"])
@@ -1046,6 +1157,63 @@ st.download_button(
     file_name=f"EDR_Speed_Report_{v_edr_input:.0f}kmh.pdf",
     mime="application/pdf"
 )
+
+
+# ==========================================
+# SECCIÓN PROTEGIDA DE ADMINISTRACIÓN (Zilina_2026)
+# ==========================================
+st.sidebar.divider()
+with st.sidebar.expander(t["admin_header"]):
+    if not st.session_state.admin_authenticated:
+        admin_pass = st.text_input(t["admin_pass_label"], type="password", key="admin_password_input")
+        if st.button(t["admin_unlock_btn"], key="btn_unlock_admin"):
+            if admin_pass == "Zilina_2026":
+                st.session_state.admin_authenticated = True
+                st.success(t["admin_pass_ok"])
+                st.rerun()
+            else:
+                st.error(t["admin_wrong_pass"])
+    else:
+        st.markdown(f"### {t['admin_form_title']}")
+        new_name = st.text_input(t["admin_veh_name"], value="", key="admin_name")
+        new_year = st.number_input(t["admin_veh_year"], min_value=2000, max_value=2030, value=2026, step=1, key="admin_year")
+        new_fitted = st.text_input(t["admin_fitted_tire"], value="225/50 R17", key="admin_fitted")
+        new_prog = st.text_input(t["admin_prog_tire"], value="225/50 R17", key="admin_prog")
+        
+        st.markdown("**Velocidades y Resultados VBOX / Speed Benchmark Data:**")
+        speeds_list = [50, 70, 90, 110, 130]
+        diffs_input = []
+        sds_input = []
+        vbox_input = []
+        
+        for sp in speeds_list:
+            c1, c2 = st.columns(2)
+            with c1:
+                df_val = st.number_input(f"Diff @ {sp} km/h (km/h)", min_value=0.0, max_value=20.0, value=2.0, step=0.1, key=f"diff_{sp}")
+                diffs_input.append(df_val)
+                vbox_input.append(round(sp - df_val, 2))
+            with c2:
+                sd_val = st.number_input(f"SD @ {sp} km/h (km/h)", min_value=0.0, max_value=10.0, value=0.4, step=0.05, key=f"sd_{sp}")
+                sds_input.append(sd_val)
+                
+        if st.button(t["admin_save_btn"], key="btn_save_custom_vehicle"):
+            if new_name.strip():
+                new_key = f"custom_{len(st.session_state.custom_vehicles) + 1}"
+                st.session_state.custom_vehicles[new_key] = {
+                    "name": f"{new_name.strip()} ({new_year}){t['admin_custom_badge']}",
+                    "year": int(new_year),
+                    "fitted_test": new_fitted.strip(),
+                    "prog_test": new_prog.strip(),
+                    "speeds": speeds_list,
+                    "vbox": vbox_input,
+                    "diff": diffs_input,
+                    "sd": sds_input
+                }
+                st.success(t["admin_success_msg"].format(name=new_name))
+                st.rerun()
+            else:
+                st.warning("Por favor introduce el nombre del vehículo / Please enter vehicle name")
+
 
 # ==========================================
 # EXPLORADOR DE LA BASE DE DATOS EMPÍRICA
