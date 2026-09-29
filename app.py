@@ -50,9 +50,11 @@ TRANSLATIONS = {
         "w_fit": "Ancho Montado (mm)",
         "a_fit": "Perfil Montado (%)",
         "r_fit": "Llanta Montada (\")",
-        "w_prog": "Ancho Programado ECU",
-        "a_prog": "Perfil Programado ECU",
-        "r_prog": "Llanta Programada ECU",
+        "w_prog": "Ancho Programado ECU (mm)",
+        "a_prog": "Perfil Programado ECU (%)",
+        "r_prog": "Llanta Programada ECU (\")",
+        "unk_fit_title": "Neumático Montado",
+        "unk_prog_title": "Neumático Programado ECU",
         "test_fitted": "Test Vehicle Fitted:",
         "test_prog": "Test Vehicle ECU Prog:",
         "use_range": "Incluir rango de incertidumbre por neumáticos homologados (Min/Max)",
@@ -137,9 +139,11 @@ TRANSLATIONS = {
         "w_fit": "Amplada Muntat (mm)",
         "a_fit": "Perfil Muntat (%)",
         "r_fit": "Llanda Muntada (\")",
-        "w_prog": "Amplada Programada ECU",
-        "a_prog": "Perfil Programat ECU",
-        "r_prog": "Llanda Programada ECU",
+        "w_prog": "Amplada Programada ECU (mm)",
+        "a_prog": "Perfil Programat ECU (%)",
+        "r_prog": "Llanda Programada ECU (\")",
+        "unk_fit_title": "Pneumàtic Muntat",
+        "unk_prog_title": "Pneumàtic Programat ECU",
         "test_fitted": "Vehicle Test Muntat:",
         "test_prog": "Vehicle Test ECU Prog:",
         "use_range": "Incloure rang d'incertesa per pneumàtics homologats (Mín/Màx)",
@@ -224,9 +228,11 @@ TRANSLATIONS = {
         "w_fit": "Fitted Width (mm)",
         "a_fit": "Fitted Aspect (%)",
         "r_fit": "Fitted Rim (\")",
-        "w_prog": "ECU Programmed Width",
-        "a_prog": "ECU Programmed Aspect",
-        "r_prog": "ECU Programmed Rim",
+        "w_prog": "ECU Programmed Width (mm)",
+        "a_prog": "ECU Programmed Aspect (%)",
+        "r_prog": "ECU Programmed Rim (\")",
+        "unk_fit_title": "Fitted Tire",
+        "unk_prog_title": "ECU Programmed Tire",
         "test_fitted": "Test Vehicle Fitted:",
         "test_prog": "Test Vehicle ECU Prog:",
         "use_range": "Include uncertainty range for approved tires (Min/Max)",
@@ -311,9 +317,11 @@ TRANSLATIONS = {
         "w_fit": "Larghezza Montato (mm)",
         "a_fit": "Profilo Montato (%)",
         "r_fit": "Cerchio Montato (\")",
-        "w_prog": "Larghezza Programmata ECU",
-        "a_prog": "Profilo Programmato ECU",
-        "r_prog": "Cerchio Programmato ECU",
+        "w_prog": "Larghezza Programmata ECU (mm)",
+        "a_prog": "Profilo Programmato ECU (%)",
+        "r_prog": "Cerchio Programmato ECU (\")",
+        "unk_fit_title": "Pneumatico Montato",
+        "unk_prog_title": "Pneumatico Programmato ECU",
         "test_fitted": "Veicolo Test Montato:",
         "test_prog": "Veicolo Test ECU Prog:",
         "use_range": "Includere intervallo di incertezza per pneumatici omologati (Min/Max)",
@@ -398,9 +406,11 @@ TRANSLATIONS = {
         "w_fit": "Lățime Montată (mm)",
         "a_fit": "Talon Montat (%)",
         "r_fit": "Jantă Montată (\")",
-        "w_prog": "Lățime Programată ECU",
-        "a_prog": "Talon Programat ECU",
-        "r_prog": "Jantă Programată ECU",
+        "w_prog": "Lățime Programată ECU (mm)",
+        "a_prog": "Talon Programat ECU (%)",
+        "r_prog": "Jantă Programată ECU (\")",
+        "unk_fit_title": "Anvelopă Montată",
+        "unk_prog_title": "Anvelopă Programată ECU",
         "test_fitted": "Vehicul Test Montat:",
         "test_prog": "Vehicul Test ECU Prog:",
         "use_range": "Include intervalul de incertitudine pentru anvelope omologate (Min/Max)",
@@ -485,9 +495,11 @@ TRANSLATIONS = {
         "w_fit": "Gemonteerde Breedte (mm)",
         "a_fit": "Gemonteerde Wanghoogte (%)",
         "r_fit": "Gemonteerde Velg (\")",
-        "w_prog": "ECU Geprogrammeerde Breedte",
-        "a_prog": "ECU Geprogrammeerde Wanghoogte",
-        "r_prog": "ECU Geprogrammeerde Velg",
+        "w_prog": "ECU Geprogrammeerde Breedte (mm)",
+        "a_prog": "ECU Geprogrammeerde Wanghoogte (%)",
+        "r_prog": "ECU Geprogrammeerde Velg (\")",
+        "unk_fit_title": "Gemonteerde Band",
+        "unk_prog_title": "ECU Geprogrammeerde Band",
         "test_fitted": "Testvoertuig Gemonteerd:",
         "test_prog": "Testvoertuig ECU Progr:",
         "use_range": "Onzekerheidsmarge voor goedgekeurde banden opnemen (Min/Max)",
@@ -572,9 +584,11 @@ TRANSLATIONS = {
         "w_fit": "Montierte Breite (mm)",
         "a_fit": "Montierte Querschnittshöhe (%)",
         "r_fit": "Montierte Felge (\")",
-        "w_prog": "ECU Programmierte Breite",
-        "a_prog": "ECU Programmierte Querschnittshöhe",
-        "r_prog": "ECU Programmierte Felge",
+        "w_prog": "ECU Programmierte Breite (mm)",
+        "a_prog": "ECU Programmierte Querschnittshöhe (%)",
+        "r_prog": "ECU Programmierte Felge (\")",
+        "unk_fit_title": "Montierter Reifen",
+        "unk_prog_title": "ECU Programmierter Reifen",
         "test_fitted": "Testfahrzeug Montiert:",
         "test_prog": "Testfahrzeug ECU Prog:",
         "use_range": "Unsicherheitsbereich für zugelassene Reifen einbeziehen (Min/Max)",
@@ -944,7 +958,7 @@ if use_custom_tires:
             a_fit = st.number_input(t["a_fit"], 25, 80, int(def_a_f), 5, key=f"af_{selected_key}")
             r_fit = st.number_input(t["r_fit"], 13, 23, int(def_r_f), 1, key=f"rf_{selected_key}")
         else:
-            st.info(f"**{t['w_fit']}**:\n{t['unknown_str']}")
+            st.info(f"**{t['unk_fit_title']}**:\n{t['unknown_str']}")
             w_fit, a_fit, r_fit = def_w_f, def_a_f, def_r_f
     with col_t2:
         if not unk_prog:
@@ -952,7 +966,7 @@ if use_custom_tires:
             a_prog = st.number_input(t["a_prog"], 25, 80, int(def_a_p), 5, key=f"ap_{selected_key}")
             r_prog = st.number_input(t["r_prog"], 13, 23, int(def_r_p), 1, key=f"rp_{selected_key}")
         else:
-            st.info(f"**{t['w_prog']}**:\n{t['unknown_str']}")
+            st.info(f"**{t['unk_prog_title']}**:\n{t['unknown_str']}")
             w_prog, a_prog, r_prog = def_w_p, def_a_p, def_r_p
 else:
     w_fit, a_fit, r_fit = parse_tire_str(veh_info["fitted_test"])
