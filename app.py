@@ -21,6 +21,10 @@ st.set_page_config(
 # ==========================================
 TRANSLATIONS = {
     "es": {
+        "unknown_fit_check": "Neumático instalado desconocido",
+        "unknown_prog_check": "Neumático programado ECU desconocido",
+        "unknown_warning": "⚠️ Al marcar neumáticos como desconocidos, la app evalúa la envolvente completa de opciones dentro del rango homologado ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). Esto amplía el intervalo de velocidad real y muestra la menor reducción de incertidumbre.",
+        "unknown_str": "DESCONOCIDO (Evaluado en rango homologado)",
         "admin_header": "🔐 Administración: Añadir Nuevo Vehículo",
         "admin_pass_label": "🔑 Contraseña de acceso:",
         "admin_unlock_btn": "Desbloquear Panel Admin",
@@ -104,6 +108,10 @@ TRANSLATIONS = {
         "pdf_just": "El calculo contempla las 4 fuentes de error definidas en el estudio:\n1. Truncamiento de digitalizacion de 1 km/h segun UN R160.\n2. Correccion geometrica dual de neumaticos (ratio de circunferencia montada / programada).\n3. Offset empirico medido con VBOX en condiciones de circulacion estable.\n4. Intervalo de confianza estadistico del 95% (2xSD + precision VBOX).\n\nConclusion: La velocidad reportada por el EDR sobreestima la velocidad real del vehiculo en condiciones estables, habiendose acotado el margen real de circulacion."
     },
     "ca": {
+        "unknown_fit_check": "Pneumàtic muntat desconegut",
+        "unknown_prog_check": "Pneumàtic programat ECU desconegut",
+        "unknown_warning": "⚠️ En marcar pneumàtics com a desconeguts, l'app avalua l'envolupant completa d'opcions dins del rang homologat ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). Això amplia l'interval de velocitat real i mostra la menor reducció d'incertesa.",
+        "unknown_str": "DESCONEGUT (Avaluat en rang homologat)",
         "admin_header": "🔐 Administració: Afegir Nou Vehicle",
         "admin_pass_label": "🔑 Contrasenya d'accés:",
         "admin_unlock_btn": "Desbloquejar Panell Admin",
@@ -187,6 +195,10 @@ TRANSLATIONS = {
         "pdf_just": "El càlcul contempla les 4 fonts d'error definides en l'estudi:\n1. Truncament de digitalització de 1 km/h segons la UN R160.\n2. Correcció geomètrica dual de pneumàtics (ràtio de circumferència muntada / programada).\n3. Desfasament empíric mesurat amb VBOX en condicions de circulació estable.\n4. Interval de confiança estadístic del 95% (2xSD + precisió VBOX).\n\nConclusió: La velocitat reportada per l'EDR sobreestima la velocitat real del vehicle en condicions estables, havent-se delimitat el marge real de circulació."
 },
     "en": {
+        "unknown_fit_check": "Unknown installed tire",
+        "unknown_prog_check": "Unknown ECU programmed tire",
+        "unknown_warning": "⚠️ When tires are marked as unknown, the app evaluates the complete envelope of options within the approved tire range ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). This widens the true speed interval and shows lower uncertainty reduction.",
+        "unknown_str": "UNKNOWN (Evaluated across approved range)",
         "admin_header": "🔐 Administration: Add New Test Vehicle",
         "admin_pass_label": "🔑 Access Password:",
         "admin_unlock_btn": "Unlock Admin Panel",
@@ -270,6 +282,10 @@ TRANSLATIONS = {
         "pdf_just": "The calculation accounts for the 4 error sources defined in the study:\n1. 1 km/h digitization truncation per UN R160.\n2. Dual geometric tire correction (fitted / programmed circumference ratio).\n3. Empirical offset measured with VBOX under steady-state driving conditions.\n4. 95% statistical confidence interval (2xSD + VBOX accuracy).\n\nConclusion: Reported EDR speed overestimates steady-state true speed, yielding a defensible true speed range."
     },
     "it": {
+        "unknown_fit_check": "Pneumatico montato sconosciuto",
+        "unknown_prog_check": "Pneumatico programmato ECU sconosciuto",
+        "unknown_warning": "⚠️ Quando i pneumatici sono sconosciuti, l'app valuta l'inviluppo completo delle opzioni nell'intervallo omologato ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). Questo amplia l'intervallo di velocità reale.",
+        "unknown_str": "SCONOSCIUTO (Valutato nell'intervallo omologato)",
         "admin_header": "🔐 Amministrazione: Aggiungi Nuovo Veicolo",
         "admin_pass_label": "🔑 Password di accesso:",
         "admin_unlock_btn": "Sblocca Pannello Admin",
@@ -353,6 +369,10 @@ TRANSLATIONS = {
         "pdf_just": "Il calcolo tiene conto delle 4 fonti di errore definite nello studio:\n1. Troncamento di digitalizzazione di 1 km/h secondo UN R160.\n2. Correzione geometrica doppia dei pneumatici (rapporto circonferenza montata / programmata).\n3. Offset empirico misurato con VBOX in condizioni di circolazione stabile.\n4. Intervallo di confidenza statistico del 95% (2xSD + precisione VBOX).\n\nConclusione: La velocita riportata dall'EDR sovrastima la velocita reale in condizioni stabili."
     },
     "ro": {
+        "unknown_fit_check": "Anvelopă montată necunoscută",
+        "unknown_prog_check": "Anvelopă programată ECU necunoscută",
+        "unknown_warning": "⚠️ Când anvelopele sunt marcate ca necunoscute, aplicația evaluează anvelopa completă în intervalul omologat ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). Aceasta extinde intervalul de viteză reală.",
+        "unknown_str": "NECUNOSCUT (Evaluat în intervalul omologat)",
         "admin_header": "🔐 Administrare: Adaugă Vehicul Nou",
         "admin_pass_label": "🔑 Parolă de acces:",
         "admin_unlock_btn": "Deblochează Panoul Admin",
@@ -436,6 +456,10 @@ TRANSLATIONS = {
         "pdf_just": "Calculul ia in considerare cele 4 surse de eroare definite in studiu:\n1. Trunchiere de digitalizare de 1 km/h conform UN R160.\n2. Corectie geometrica dubla a anvelopelor (raport circumferinta montata / programata).\n3. Abatere empirica masurata cu VBOX in regim stabil de deplasare.\n4. Interval de incredere statistic de 95% (2xSD + precizie VBOX).\n\nConcluzie: Viteza raportata de EDR supraestimeaza viteza reala in regim stabil, oferind un interval aparabil."
 },
     "nl": {
+        "unknown_fit_check": "Onbekende gemonteerde band",
+        "unknown_prog_check": "Onbekende ECU geprogrammeerde band",
+        "unknown_warning": "⚠️ Wanneer banden als onbekend zijn gemarkeerd, berekent de app het volledige bereik binnen de goedgekeurde marge ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}), wat het snelheidsinterval vergroot.",
+        "unknown_str": "ONBEKEND (Evalueert over goedgekeurd bereik)",
         "admin_header": "🔐 Beheer: Nieuw Testvoertuig Toevoegen",
         "admin_pass_label": "🔑 Toegangswachtwoord:",
         "admin_unlock_btn": "Admin Paneel Ontgrendelen",
@@ -519,6 +543,10 @@ TRANSLATIONS = {
         "pdf_just": "De berekening houdt rekening met de 4 foutenbronnen uit de studie:\n1. 1 km/h digitaliseringsafronding volgens UN R160.\n2. Dubbele geometrische bandencorrectie (verhouding gemonteerde / geprogrammeerde omtrek).\n3. Empirische afwijking gemeten met VBOX bij constante rijomstandigheden.\n4. 95% statistisch betrouwbaarheidsinterval (2xSD + VBOX nauwkeurigheid).\n\nConclusie: De gerapporteerde EDR-snelheid overschat de werkelijke snelheid bij constante rit."
 },
     "de": {
+        "unknown_fit_check": "Unbekannter montierter Reifen",
+        "unknown_prog_check": "Unbekannter ECU programmierter Reifen",
+        "unknown_warning": "⚠️ Wenn Reifen als unbekannt markiert sind, berechnet die App die vollständige Einhüllende im zugelassenen Bereich ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}), was das Geschwindigkeitsintervall erweitert.",
+        "unknown_str": "UNBEKANNT (In zugelassenem Bereich evaluiert)",
         "admin_header": "🔐 Verwaltung: Neues Testfahrzeug Hinzufügen",
         "admin_pass_label": "🔑 Zugangspasswort:",
         "admin_unlock_btn": "Admin Panel Freischalten",
@@ -897,6 +925,12 @@ selected_veh_name = get_vehicle_name(selected_key, lang_code)
 
 st.sidebar.subheader(t["tire_section"])
 
+col_unk1, col_unk2 = st.sidebar.columns(2)
+with col_unk1:
+    unk_fitted = st.checkbox(t["unknown_fit_check"], value=False, key=f"unk_fit_{selected_key}")
+with col_unk2:
+    unk_prog = st.checkbox(t["unknown_prog_check"], value=False, key=f"unk_prog_{selected_key}")
+
 use_custom_tires = st.sidebar.checkbox(t["customize_tires"], value=True)
 
 def_w_f, def_a_f, def_r_f = parse_tire_str(veh_info["fitted_test"])
@@ -905,38 +939,52 @@ def_w_p, def_a_p, def_r_p = parse_tire_str(veh_info["prog_test"])
 if use_custom_tires:
     col_t1, col_t2 = st.sidebar.columns(2)
     with col_t1:
-        w_fit = st.number_input(t["w_fit"], 135, 335, int(def_w_f), 5, key=f"wf_{selected_key}")
-        a_fit = st.number_input(t["a_fit"], 25, 80, int(def_a_f), 5, key=f"af_{selected_key}")
-        r_fit = st.number_input(t["r_fit"], 13, 23, int(def_r_f), 1, key=f"rf_{selected_key}")
+        if not unk_fitted:
+            w_fit = st.number_input(t["w_fit"], 135, 335, int(def_w_f), 5, key=f"wf_{selected_key}")
+            a_fit = st.number_input(t["a_fit"], 25, 80, int(def_a_f), 5, key=f"af_{selected_key}")
+            r_fit = st.number_input(t["r_fit"], 13, 23, int(def_r_f), 1, key=f"rf_{selected_key}")
+        else:
+            st.info(f"**{t['w_fit']}**:\n{t['unknown_str']}")
+            w_fit, a_fit, r_fit = def_w_f, def_a_f, def_r_f
     with col_t2:
-        w_prog = st.number_input(t["w_prog"], 135, 335, int(def_w_p), 5, key=f"wp_{selected_key}")
-        a_prog = st.number_input(t["a_prog"], 25, 80, int(def_a_p), 5, key=f"ap_{selected_key}")
-        r_prog = st.number_input(t["r_prog"], 13, 23, int(def_r_p), 1, key=f"rp_{selected_key}")
-    
-    crash_fitted_str = f"{w_fit}/{a_fit} R{r_fit}"
-    crash_prog_str = f"{w_prog}/{a_prog} R{r_prog}"
+        if not unk_prog:
+            w_prog = st.number_input(t["w_prog"], 135, 335, int(def_w_p), 5, key=f"wp_{selected_key}")
+            a_prog = st.number_input(t["a_prog"], 25, 80, int(def_a_p), 5, key=f"ap_{selected_key}")
+            r_prog = st.number_input(t["r_prog"], 13, 23, int(def_r_p), 1, key=f"rp_{selected_key}")
+        else:
+            st.info(f"**{t['w_prog']}**:\n{t['unknown_str']}")
+            w_prog, a_prog, r_prog = def_w_p, def_a_p, def_r_p
 else:
-    crash_fitted_str = veh_info["fitted_test"]
-    crash_prog_str = veh_info["prog_test"]
-    w_fit, a_fit, r_fit = parse_tire_str(crash_fitted_str)
-    w_prog, a_prog, r_prog = parse_tire_str(crash_prog_str)
+    w_fit, a_fit, r_fit = parse_tire_str(veh_info["fitted_test"])
+    w_prog, a_prog, r_prog = parse_tire_str(veh_info["prog_test"])
+
+crash_fitted_str = t["unknown_str"] if unk_fitted else f"{w_fit}/{a_fit} R{r_fit}"
+crash_prog_str = t["unknown_str"] if unk_prog else f"{w_prog}/{a_prog} R{r_prog}"
 
 st.sidebar.caption(f"**{t['test_fitted']}** {veh_info['fitted_test']}")
 st.sidebar.caption(f"**{t['test_prog']}** {veh_info['prog_test']}")
 
-use_range = st.sidebar.checkbox(t["use_range"], value=False)
+use_range_user = st.sidebar.checkbox(t["use_range"], value=False)
+use_range = use_range_user or unk_fitted or unk_prog
 
-if use_range:
+# Default range bounds
+if use_range or unk_fitted or unk_prog:
     st.sidebar.markdown(f"**{t['range_section']}**")
     col_r1, col_r2 = st.sidebar.columns(2)
     with col_r1:
-        w_min = st.number_input(t["w_min"], 135, 335, 225, 5)
-        a_min = st.number_input(t["a_min"], 25, 80, 40, 5)
-        r_min = st.number_input(t["r_min"], 13, 23, 18, 1)
+        w_min = st.number_input(t["w_min"], 135, 335, 225, 5, key=f"wmin_{selected_key}")
+        a_min = st.number_input(t["a_min"], 25, 80, 40, 5, key=f"amin_{selected_key}")
+        r_min = st.number_input(t["r_min"], 13, 23, 18, 1, key=f"rmin_{selected_key}")
     with col_r2:
-        w_max = st.number_input(t["w_max"], 135, 335, 225, 5)
-        a_max = st.number_input(t["a_max"], 25, 80, 55, 5)
-        r_max = st.number_input(t["r_max"], 13, 23, 16, 1)
+        w_max = st.number_input(t["w_max"], 135, 335, 255, 5, key=f"wmax_{selected_key}")
+        a_max = st.number_input(t["a_max"], 25, 80, 55, 5, key=f"amax_{selected_key}")
+        r_max = st.number_input(t["r_max"], 13, 23, 18, 1, key=f"rmax_{selected_key}")
+    
+    if unk_fitted or unk_prog:
+        st.sidebar.warning(t["unknown_warning"].format(
+            w_min=w_min, a_min=a_min, r_min=r_min,
+            w_max=w_max, a_max=a_max, r_max=r_max
+        ))
 
 # ==========================================
 # CÁLCULOS PRINCIPALES
@@ -952,17 +1000,38 @@ w_tp, a_tp, r_tp = parse_tire_str(veh_info["prog_test"])
 _, c_test_fitted = calc_tire_geometry(w_tf, a_tf, r_tf)
 _, c_test_prog = calc_tire_geometry(w_tp, a_tp, r_tp)
 
-ratio1 = c_crash_fitted / c_test_fitted
-ratio2 = c_crash_prog / c_test_prog
+if use_range or unk_fitted or unk_prog:
+    _, c_min_calc = calc_tire_geometry(w_min, a_min, r_min)
+    _, c_max_calc = calc_tire_geometry(w_max, a_max, r_max)
+    c_min = min(c_min_calc, c_max_calc)
+    c_max = max(c_min_calc, c_max_calc)
 
-if use_range:
-    _, c_min = calc_tire_geometry(w_min, a_min, r_min)
-    _, c_max = calc_tire_geometry(w_max, a_max, r_max)
-    ratio1_min = min(c_crash_fitted, c_min) / c_test_fitted
-    ratio1_max = max(c_crash_fitted, c_max) / c_test_fitted
-    ratio2_min = min(c_crash_prog, c_min) / c_test_prog
-    ratio2_max = max(c_crash_prog, c_max) / c_test_prog
+    if unk_fitted:
+        ratio1_min = c_min / c_test_fitted
+        ratio1_max = c_max / c_test_fitted
+        ratio1 = (c_min + c_max) / 2.0 / c_test_fitted
+    elif use_range_user:
+        ratio1_min = min(c_crash_fitted, c_min) / c_test_fitted
+        ratio1_max = max(c_crash_fitted, c_max) / c_test_fitted
+        ratio1 = c_crash_fitted / c_test_fitted
+    else:
+        ratio1 = c_crash_fitted / c_test_fitted
+        ratio1_min = ratio1_max = ratio1
+
+    if unk_prog:
+        ratio2_min = c_min / c_test_prog
+        ratio2_max = c_max / c_test_prog
+        ratio2 = (c_min + c_max) / 2.0 / c_test_prog
+    elif use_range_user:
+        ratio2_min = min(c_crash_prog, c_min) / c_test_prog
+        ratio2_max = max(c_crash_prog, c_max) / c_test_prog
+        ratio2 = c_crash_prog / c_test_prog
+    else:
+        ratio2 = c_crash_prog / c_test_prog
+        ratio2_min = ratio2_max = ratio2
 else:
+    ratio1 = c_crash_fitted / c_test_fitted
+    ratio2 = c_crash_prog / c_test_prog
     ratio1_min = ratio1_max = ratio1
     ratio2_min = ratio2_max = ratio2
 
@@ -1089,8 +1158,8 @@ breakdown_data = {
     ],
     t["col_value"]: [
         f"[{v_edr_min:.1f} — {v_edr_max:.1f}] km/h",
-        f"Ratio 1 = {ratio1:.4f} (Circ: {c_crash_fitted:.1f} vs {c_test_fitted:.1f} mm)",
-        f"Ratio 2 = {ratio2:.4f} (Circ: {c_crash_prog:.1f} vs {c_test_prog:.1f} mm)",
+        f"Ratio 1 = [{ratio1_min:.4f} — {ratio1_max:.4f}] ({t['unknown_str']})" if unk_fitted else f"Ratio 1 = {ratio1:.4f} (Circ: {c_crash_fitted:.1f} vs {c_test_fitted:.1f} mm)",
+        f"Ratio 2 = [{ratio2_min:.4f} — {ratio2_max:.4f}] ({t['unknown_str']})" if unk_prog else f"Ratio 2 = {ratio2:.4f} (Circ: {c_crash_prog:.1f} vs {c_test_prog:.1f} mm)",
         f"-{diff_exp:.4f} km/h (a {v_edr_input:.1f} km/h)",
         f"±{(2.0*sd_exp + vbox_acc):.4f} km/h (SD = {sd_exp:.4f}, 95% CI)",
         f"[{v_real_min:.2f} — {v_real_max:.2f}] km/h"
