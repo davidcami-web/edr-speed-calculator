@@ -42,7 +42,7 @@ TRANSLATIONS = {
         "title": "🚗 Calibrador de Velocidad Real EDR",
         "subtitle": "**Herramienta Pericial de Cuantificación de Velocidad Real EDR (Reglamentos UN R160 / UN R39)**\n\n*Basado en la investigación científica de **Mattia Sillo, Matteo Villaraggia y David Camí González** (Congreso Europeo EVU Žilina 2026).*",
         "sidebar_header": "📋 Datos de Entrada EDR y Vehículo",
-        "v_edr_label": "Velocidad Indicada EDR (Pre-Crash km/h):",
+        "v_edr_label": "Velocidad Indicada EDR Pre-Crash (km/h):",
         "v_edr_help": "Valor de 'Speed, Vehicle Indicated' registrado en el informe EDR (UN R160).",
         "veh_select_label": "Vehículo Ensayado de Referencia:",
         "tire_section": "🛞 Neumáticos del Vehículo del Accidente",
@@ -129,7 +129,7 @@ TRANSLATIONS = {
         "title": "🚗 Calibrador de Velocitat Real EDR",
         "subtitle": "**Eina Pericial de Quantificació de Velocitat Real EDR (Reglaments UN R160 / UN R39)**\n\n*Basat en la investigació científica de **Mattia Sillo, Matteo Villaraggia i David Camí González** (Congrés Europeu EVU Žilina 2026).*",
         "sidebar_header": "📋 Dades d'Entrada EDR i Vehicle",
-        "v_edr_label": "Velocitat Indicada EDR (Pre-Crash km/h):",
+        "v_edr_label": "Velocitat Indicada EDR Pre-Crash (km/h):",
         "v_edr_help": "Valor de 'Speed, Vehicle Indicated' registrat a l'informe EDR (UN R160).",
         "veh_select_label": "Vehicle Assajat de Referència:",
         "tire_section": "🛞 Pneumàtics del Vehicle de l'Accident",
@@ -216,7 +216,7 @@ TRANSLATIONS = {
         "title": "🚗 EDR True Speed Calibrator",
         "subtitle": "**Forensic Quantification Tool for EDR True Speed (UN R160 / UN R39 Regulations)**\n\n*Based on scientific research by **Mattia Sillo, Matteo Villaraggia, and David Camí González** (European EVU Congress Žilina 2026).*",
         "sidebar_header": "📋 EDR & Vehicle Input Data",
-        "v_edr_label": "EDR Indicated Speed (Pre-Crash km/h):",
+        "v_edr_label": "EDR Indicated Speed Pre-Crash (km/h):",
         "v_edr_help": "'Speed, Vehicle Indicated' value recorded in the EDR report (UN R160).",
         "veh_select_label": "Reference Test Vehicle:",
         "tire_section": "🛞 Accident Vehicle Tires",
@@ -303,7 +303,7 @@ TRANSLATIONS = {
         "title": "🚗 Calibratore di Velocità Reale EDR",
         "subtitle": "**Strumento Peritale di Quantificazione della Velocità Reale EDR (Regolamenti UN R160 / UN R39)**\n\n*Basato sulla ricerca scientifica di **Mattia Sillo, Matteo Villaraggia e David Camí González** (Congresso Europeo EVU Žilina 2026).*",
         "sidebar_header": "📋 Dati di Input EDR e Veicolo",
-        "v_edr_label": "Velocità Indicata EDR (Pre-Crash km/h):",
+        "v_edr_label": "Velocità Indicata EDR Pre-Crash (km/h):",
         "v_edr_help": "Valore di 'Speed, Vehicle Indicated' registrato nel rapporto EDR (UN R160).",
         "veh_select_label": "Veicolo di Riferimento Test:",
         "tire_section": "🛞 Pneumatici del Veicolo Incidentato",
@@ -390,7 +390,7 @@ TRANSLATIONS = {
         "title": "🚗 Calibrator de Viteză Reală EDR",
         "subtitle": "**Instrument Judiciar de Cuantificare a Vitezei Reale EDR (Reglementările UN R160 / UN R39)**\n\n*Bazat pe cercetarea științifică a autorilor **Mattia Sillo, Matteo Villaraggia și David Camí González** (Congresul European EVU Žilina 2026).*",
         "sidebar_header": "📋 Date de Intrare EDR și Vehicul",
-        "v_edr_label": "Viteză Indicată EDR (Pre-Crash km/h):",
+        "v_edr_label": "Viteză Indicată EDR Pre-Crash (km/h):",
         "v_edr_help": "Valoarea 'Speed, Vehicle Indicated' înregistrată în raportul EDR (UN R160).",
         "veh_select_label": "Vehicul de Referință Testat:",
         "tire_section": "🛞 Anvelope Vehicul Accident",
@@ -477,7 +477,7 @@ TRANSLATIONS = {
         "title": "🚗 EDR Werkelijke Snelheid Calibrator",
         "subtitle": "**Forensisch Instrument voor Kwantificering van EDR Werkelijke Snelheid (UN R160 / UN R39 Reglementen)**\n\n*Gebaseerd op wetenschappelijk onderzoek van **Mattia Sillo, Matteo Villaraggia en David Camí González** (Europees EVU Congres Žilina 2026).*",
         "sidebar_header": "📋 EDR & Voertuig Invoergegevens",
-        "v_edr_label": "EDR Aangegeven Snelheid (Pre-Crash km/h):",
+        "v_edr_label": "EDR Aangegeven Snelheid Pre-Crash (km/h):",
         "v_edr_help": "'Speed, Vehicle Indicated' waarde geregistreerd in EDR rapport (UN R160).",
         "veh_select_label": "Referentie Testvoertuig:",
         "tire_section": "🛞 Banden Ongevalsvoertuig",
@@ -564,7 +564,7 @@ TRANSLATIONS = {
         "title": "🚗 EDR Realle Geschwindigkeits-Kalibrierer",
         "subtitle": "**Forensisches Werkzeug zur Quantifizierung der realen EDR-Geschwindigkeit (UN R160 / UN R39 Regelungen)**\n\n*Basierend auf der wissenschaftlichen Forschung von **Mattia Sillo, Matteo Villaraggia und David Camí González** (Europäischer EVU-Kongress Žilina 2026).*",
         "sidebar_header": "📋 EDR & Fahrzeug-Eingabedaten",
-        "v_edr_label": "EDR Indizierte Geschwindigkeit (Pre-Crash km/h):",
+        "v_edr_label": "EDR Indizierte Geschwindigkeit Pre-Crash (km/h):",
         "v_edr_help": "'Speed, Vehicle Indicated' Wert aus dem EDR-Bericht (UN R160).",
         "veh_select_label": "Referenz-Testfahrzeug:",
         "tire_section": "🛞 Reifen des Unfallfahrzeugs",
@@ -1258,11 +1258,11 @@ with st.sidebar.expander(t["admin_header"]):
         for sp in speeds_list:
             c1, c2 = st.columns(2)
             with c1:
-                df_val = st.number_input(f"Diff @ {sp} km/h (km/h)", min_value=0.0, max_value=20.0, value=2.0, step=0.1, key=f"diff_{sp}")
+                df_val = st.number_input(f"Diff @ {sp} km/h", min_value=0.0, max_value=20.0, value=2.0, step=0.1, key=f"diff_{sp}")
                 diffs_input.append(df_val)
                 vbox_input.append(round(sp - df_val, 2))
             with c2:
-                sd_val = st.number_input(f"SD @ {sp} km/h (km/h)", min_value=0.0, max_value=10.0, value=0.4, step=0.05, key=f"sd_{sp}")
+                sd_val = st.number_input(f"SD @ {sp} km/h", min_value=0.0, max_value=10.0, value=0.4, step=0.05, key=f"sd_{sp}")
                 sds_input.append(sd_val)
                 
         if st.button(t["admin_save_btn"], key="btn_save_custom_vehicle"):
