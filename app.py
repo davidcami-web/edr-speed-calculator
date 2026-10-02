@@ -1021,15 +1021,15 @@ if use_range or unk_fitted or unk_prog:
     c_max = max(c_min_calc, c_max_calc)
 
     if unk_fitted:
-        ratio1_min = c_min / c_test_fitted
-        ratio1_max = c_max / c_test_fitted
-        ratio1 = (c_min + c_max) / 2.0 / c_test_fitted
+        ratio1_min = c_min / c_test_prog
+        ratio1_max = c_max / c_test_prog
+        ratio1 = (c_min + c_max) / 2.0 / c_test_prog
     elif use_range_user:
-        ratio1_min = min(c_crash_fitted, c_min) / c_test_fitted
-        ratio1_max = max(c_crash_fitted, c_max) / c_test_fitted
-        ratio1 = c_crash_fitted / c_test_fitted
+        ratio1_min = min(c_crash_fitted, c_min) / c_test_prog
+        ratio1_max = max(c_crash_fitted, c_max) / c_test_prog
+        ratio1 = c_crash_fitted / c_test_prog
     else:
-        ratio1 = c_crash_fitted / c_test_fitted
+        ratio1 = c_crash_fitted / c_test_prog
         ratio1_min = ratio1_max = ratio1
 
     if unk_prog:
@@ -1044,7 +1044,7 @@ if use_range or unk_fitted or unk_prog:
         ratio2 = c_crash_prog / c_test_prog
         ratio2_min = ratio2_max = ratio2
 else:
-    ratio1 = c_crash_fitted / c_test_fitted
+    ratio1 = c_crash_fitted / c_test_prog
     ratio2 = c_crash_prog / c_test_prog
     ratio1_min = ratio1_max = ratio1
     ratio2_min = ratio2_max = ratio2
@@ -1172,7 +1172,7 @@ breakdown_data = {
     ],
     t["col_value"]: [
         f"[{v_edr_min:.1f} — {v_edr_max:.1f}] km/h",
-        f"Ratio 1 = [{ratio1_min:.4f} — {ratio1_max:.4f}] ({t['unknown_str']})" if unk_fitted else f"Ratio 1 = {ratio1:.4f} (Circ: {c_crash_fitted:.1f} vs {c_test_fitted:.1f} mm)",
+        f"Ratio 1 = [{ratio1_min:.4f} — {ratio1_max:.4f}] ({t['unknown_str']})" if unk_fitted else f"Ratio 1 = {ratio1:.4f} (Circ: {c_crash_fitted:.1f} vs {c_test_prog:.1f} mm)",
         f"Ratio 2 = [{ratio2_min:.4f} — {ratio2_max:.4f}] ({t['unknown_str']})" if unk_prog else f"Ratio 2 = {ratio2:.4f} (Circ: {c_crash_prog:.1f} vs {c_test_prog:.1f} mm)",
         f"-{diff_exp:.4f} km/h (a {v_edr_input:.1f} km/h)",
         f"±{(2.0*sd_exp + vbox_acc):.4f} km/h (SD = {sd_exp:.4f}, 95% CI)",
