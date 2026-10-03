@@ -21,6 +21,9 @@ st.set_page_config(
 # ==========================================
 TRANSLATIONS = {
     "es": {
+        "decimal_select_label": "Precisión de decimales:",
+        "decimal_option_1": "1 Decimal (ej. 47.6 km/h)",
+        "decimal_option_2": "2 Decimales (ej. 47.61 km/h)",
         "unknown_fit_check": "Neumático instalado desconocido",
         "unknown_prog_check": "Neumático programado ECU desconocido",
         "unknown_warning": "⚠️ Al marcar neumáticos como desconocidos, la app evalúa la envolvente completa de opciones dentro del rango homologado ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). Esto amplía el intervalo de velocidad real y muestra la menor reducción de incertidumbre.",
@@ -73,7 +76,7 @@ TRANSLATIONS = {
         "vs_edr": "vs EDR",
         "mean_offset": "Offset medio",
         "range_width": "Ancho rango",
-        "success_msg": "Para un valor de velocidad indicado en EDR de **{v_edr:.1f} km/h**, la velocidad real de circulación en condiciones estables se acota rigurosamente en el intervalo **[{v_min:.2f} km/h — {v_max:.2f} km/h]**.",
+        "success_msg": "Para un valor de velocidad indicado en EDR de **{v_edr:.1f} km/h**, la velocidad real de circulación en condiciones estables se acota rigurosamente en el intervalo **[{v_min} km/h — {v_max} km/h]**.",
         "chart_header": "📊 Gráfico Comparativo: EDR vs Velocidad Real y Límites Normativos",
         "chart_title": "Curva de Calibración - {veh_name}",
         "chart_xaxis": "Velocidad Indicada EDR / Velocímetro (km/h)",
@@ -97,7 +100,7 @@ TRANSLATIONS = {
         "f5_name": "5. Desviación Estándar de Ensayo (2·SD + VBOX Acc)",
         "f5_eff": "Margen estadístico de estabilidad del ensayo",
         "f6_name": "RESULTADO INTERVALO FINAL ACOTADO",
-        "f6_eff": "Intervalo final acotado ({width:.2f} km/h)",
+        "f6_eff": "Intervalo final acotado ({width} km/h)",
         "pdf_header": "📄 Generación de Informe Pericial en PDF",
         "pdf_button": "📥 Descargar Informe Pericial (PDF)",
         "expander_title": "📚 Ver Base de Datos Empírica de los 16 Vehículos Ensayados (EVU 2026)",
@@ -110,6 +113,9 @@ TRANSLATIONS = {
         "pdf_just": "El calculo contempla las 4 fuentes de error definidas en el estudio:\n1. Truncamiento de digitalizacion de 1 km/h segun UN R160.\n2. Correccion geometrica dual de neumaticos (ratio de circunferencia montada / programada).\n3. Offset empirico medido con VBOX en condiciones de circulacion estable.\n4. Intervalo de confianza estadistico del 95% (2xSD + precision VBOX).\n\nConclusion: La velocidad reportada por el EDR sobreestima la velocidad real del vehiculo en condiciones estables, habiendose acotado el margen real de circulacion."
     },
     "ca": {
+        "decimal_select_label": "Precisió de decimals:",
+        "decimal_option_1": "1 Decimal (ex. 47.6 km/h)",
+        "decimal_option_2": "2 Decimals (ex. 47.61 km/h)",
         "unknown_fit_check": "Pneumàtic muntat desconegut",
         "unknown_prog_check": "Pneumàtic programat ECU desconegut",
         "unknown_warning": "⚠️ En marcar pneumàtics com a desconeguts, l'app avalua l'envolupant completa d'opcions dins del rang homologat ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). Això amplia l'interval de velocitat real i mostra la menor reducció d'incertesa.",
@@ -162,7 +168,7 @@ TRANSLATIONS = {
         "vs_edr": "vs EDR",
         "mean_offset": "Desfasament mitjà",
         "range_width": "Amplada del rang",
-        "success_msg": "Per a un valor de velocitat indicat en EDR de **{v_edr:.1f} km/h**, la velocitat real de circulació en condicions estables es delimita rigorosament en l'interval **[{v_min:.2f} km/h — {v_max:.2f} km/h]**.",
+        "success_msg": "Per a un valor de velocitat indicat en EDR de **{v_edr:.1f} km/h**, la velocitat real de circulació en condicions estables es delimita rigorosament en l'interval **[{v_min} km/h — {v_max} km/h]**.",
         "chart_header": "📊 Gràfic Comparatiu: EDR vs Velocitat Real i Límits Normatius",
         "chart_title": "Corba de Calibració - {veh_name}",
         "chart_xaxis": "Velocitat Indicada EDR / Velocímetre (km/h)",
@@ -186,7 +192,7 @@ TRANSLATIONS = {
         "f5_name": "5. Desviació Estàndard d'Assaig (2·SD + VBOX Acc)",
         "f5_eff": "Marge estadístic d'estabilitat de l'assaig",
         "f6_name": "RESULTAT DE L'INTERVAL FINAL DELIMITAT",
-        "f6_eff": "Interval final delimitat ({width:.2f} km/h)",
+        "f6_eff": "Interval final delimitat ({width} km/h)",
         "pdf_header": "📄 Generació d'Informe Pericial en PDF",
         "pdf_button": "📥 Descarregar Informe Pericial (PDF)",
         "expander_title": "📚 Veure la Base de Dades Empírica dels 16 Vehicles Assajats (EVU 2026)",
@@ -199,6 +205,9 @@ TRANSLATIONS = {
         "pdf_just": "El càlcul contempla les 4 fonts d'error definides en l'estudi:\n1. Truncament de digitalització de 1 km/h segons la UN R160.\n2. Correcció geomètrica dual de pneumàtics (ràtio de circumferència muntada / programada).\n3. Desfasament empíric mesurat amb VBOX en condicions de circulació estable.\n4. Interval de confiança estadístic del 95% (2xSD + precisió VBOX).\n\nConclusió: La velocitat reportada per l'EDR sobreestima la velocitat real del vehicle en condicions estables, havent-se delimitat el marge real de circulació."
 },
     "en": {
+        "decimal_select_label": "Decimal precision:",
+        "decimal_option_1": "1 Decimal place (e.g. 47.6 km/h)",
+        "decimal_option_2": "2 Decimal places (e.g. 47.61 km/h)",
         "unknown_fit_check": "Unknown installed tire",
         "unknown_prog_check": "Unknown ECU programmed tire",
         "unknown_warning": "⚠️ When tires are marked as unknown, the app evaluates the complete envelope of options within the approved tire range ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). This widens the true speed interval and shows lower uncertainty reduction.",
@@ -251,7 +260,7 @@ TRANSLATIONS = {
         "vs_edr": "vs EDR",
         "mean_offset": "Mean offset",
         "range_width": "Range width",
-        "success_msg": "For an EDR indicated speed of **{v_edr:.1f} km/h**, the steady-state true speed is rigorously bounded within the interval **[{v_min:.2f} km/h — {v_max:.2f} km/h]**.",
+        "success_msg": "For an EDR indicated speed of **{v_edr:.1f} km/h**, the steady-state true speed is rigorously bounded within the interval **[{v_min} km/h — {v_max} km/h]**.",
         "chart_header": "📊 Comparative Chart: EDR vs True Speed & Regulatory Limits",
         "chart_title": "Calibration Curve - {veh_name}",
         "chart_xaxis": "EDR Indicated Speed / Speedometer (km/h)",
@@ -275,7 +284,7 @@ TRANSLATIONS = {
         "f5_name": "5. Test Standard Deviation (2·SD + VBOX Acc)",
         "f5_eff": "Statistical margin for test stability",
         "f6_name": "FINAL BOUNDED INTERVAL RESULT",
-        "f6_eff": "Final bounded range ({width:.2f} km/h)",
+        "f6_eff": "Final bounded range ({width} km/h)",
         "pdf_header": "📄 Forensic PDF Report Generation",
         "pdf_button": "📥 Download Forensic Report (PDF)",
         "expander_title": "📚 View Empirical Database of 16 Tested Vehicles (EVU 2026)",
@@ -288,6 +297,9 @@ TRANSLATIONS = {
         "pdf_just": "The calculation accounts for the 4 error sources defined in the study:\n1. 1 km/h digitization truncation per UN R160.\n2. Dual geometric tire correction (fitted / programmed circumference ratio).\n3. Empirical offset measured with VBOX under steady-state driving conditions.\n4. 95% statistical confidence interval (2xSD + VBOX accuracy).\n\nConclusion: Reported EDR speed overestimates steady-state true speed, yielding a defensible true speed range."
     },
     "it": {
+        "decimal_select_label": "Precisione decimali:",
+        "decimal_option_1": "1 Decimale (es. 47.6 km/h)",
+        "decimal_option_2": "2 Decimali (es. 47.61 km/h)",
         "unknown_fit_check": "Pneumatico montato sconosciuto",
         "unknown_prog_check": "Pneumatico programmato ECU sconosciuto",
         "unknown_warning": "⚠️ Quando i pneumatici sono sconosciuti, l'app valuta l'inviluppo completo delle opzioni nell'intervallo omologato ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). Questo amplia l'intervallo di velocità reale.",
@@ -340,7 +352,7 @@ TRANSLATIONS = {
         "vs_edr": "vs EDR",
         "mean_offset": "Offset medio",
         "range_width": "Larghezza intervallo",
-        "success_msg": "Per un valore di velocità indicata in EDR di **{v_edr:.1f} km/h**, la velocità reale di circolazione in condizioni stabili è rigorosamente delimitata nell'intervallo **[{v_min:.2f} km/h — {v_max:.2f} km/h]**.",
+        "success_msg": "Per un valore di velocità indicata in EDR di **{v_edr:.1f} km/h**, la velocità reale di circolazione in condizioni stabili è rigorosamente delimitata nell'intervallo **[{v_min} km/h — {v_max} km/h]**.",
         "chart_header": "📊 Grafico Comparativo: EDR vs Velocità Reale e Limiti Normativi",
         "chart_title": "Curva di Calibrazione - {veh_name}",
         "chart_xaxis": "Velocità Indicata EDR / Tachimetro (km/h)",
@@ -364,7 +376,7 @@ TRANSLATIONS = {
         "f5_name": "5. Deviazione Standard del Test (2·SD + VBOX Acc)",
         "f5_eff": "Margine statistico di stabilità del test",
         "f6_name": "RISULTATO INTERVALLO FINALE DELIMITATO",
-        "f6_eff": "Intervallo finale delimitato ({width:.2f} km/h)",
+        "f6_eff": "Intervallo finale delimitato ({width} km/h)",
         "pdf_header": "📄 Generazione del Rapporto Peritale PDF",
         "pdf_button": "📥 Scarica Rapporto Peritale (PDF)",
         "expander_title": "📚 Visualizza Database Empirico dei 16 Veicoli Testati (EVU 2026)",
@@ -377,6 +389,9 @@ TRANSLATIONS = {
         "pdf_just": "Il calcolo tiene conto delle 4 fonti di errore definite nello studio:\n1. Troncamento di digitalizzazione di 1 km/h secondo UN R160.\n2. Correzione geometrica doppia dei pneumatici (rapporto circonferenza montata / programmata).\n3. Offset empirico misurato con VBOX in condizioni di circolazione stabile.\n4. Intervallo di confidenza statistico del 95% (2xSD + precisione VBOX).\n\nConclusione: La velocita riportata dall'EDR sovrastima la velocita reale in condizioni stabili."
     },
     "ro": {
+        "decimal_select_label": "Precizie zecimale:",
+        "decimal_option_1": "1 Zecimală (ex. 47.6 km/h)",
+        "decimal_option_2": "2 Zecimale (ex. 47.61 km/h)",
         "unknown_fit_check": "Anvelopă montată necunoscută",
         "unknown_prog_check": "Anvelopă programată ECU necunoscută",
         "unknown_warning": "⚠️ Când anvelopele sunt marcate ca necunoscute, aplicația evaluează anvelopa completă în intervalul omologat ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}). Aceasta extinde intervalul de viteză reală.",
@@ -429,7 +444,7 @@ TRANSLATIONS = {
         "vs_edr": "vs EDR",
         "mean_offset": "Abatere medie",
         "range_width": "Lățime interval",
-        "success_msg": "Pentru o viteză indicată EDR de **{v_edr:.1f} km/h**, viteza reală în regim stabil este riguros delimitată în intervalul **[{v_min:.2f} km/h — {v_max:.2f} km/h]**.",
+        "success_msg": "Pentru o viteză indicată EDR de **{v_edr:.1f} km/h**, viteza reală în regim stabil este riguros delimitată în intervalul **[{v_min} km/h — {v_max} km/h]**.",
         "chart_header": "📊 Grafic Comparativ: EDR vs Viteză Reală și Limite Normative",
         "chart_title": "Curbă de Calibrare - {veh_name}",
         "chart_xaxis": "Viteză Indicată EDR / Vitezometru (km/h)",
@@ -453,7 +468,7 @@ TRANSLATIONS = {
         "f5_name": "5. Abatere Standard Test (2·SD + Precizie VBOX)",
         "f5_eff": "Marjă statistică de stabilitate a testului",
         "f6_name": "REZULTAT INTERVAL FINAL DELIMITAT",
-        "f6_eff": "Interval final delimitat ({width:.2f} km/h)",
+        "f6_eff": "Interval final delimitat ({width} km/h)",
         "pdf_header": "📄 Generare Raport Expertiză PDF",
         "pdf_button": "📥 Descărcare Raport Expertiză (PDF)",
         "expander_title": "📚 Vizualizare Bază de Date Empirică 16 Vehicule Testate (EVU 2026)",
@@ -466,6 +481,9 @@ TRANSLATIONS = {
         "pdf_just": "Calculul ia in considerare cele 4 surse de eroare definite in studiu:\n1. Trunchiere de digitalizare de 1 km/h conform UN R160.\n2. Corectie geometrica dubla a anvelopelor (raport circumferinta montata / programata).\n3. Abatere empirica masurata cu VBOX in regim stabil de deplasare.\n4. Interval de incredere statistic de 95% (2xSD + precizie VBOX).\n\nConcluzie: Viteza raportata de EDR supraestimeaza viteza reala in regim stabil, oferind un interval aparabil."
 },
     "nl": {
+        "decimal_select_label": "Decimale precisie:",
+        "decimal_option_1": "1 Decimaal (bijv. 47.6 km/h)",
+        "decimal_option_2": "2 Decimalen (bijv. 47.61 km/h)",
         "unknown_fit_check": "Onbekende gemonteerde band",
         "unknown_prog_check": "Onbekende ECU geprogrammeerde band",
         "unknown_warning": "⚠️ Wanneer banden als onbekend zijn gemarkeerd, berekent de app het volledige bereik binnen de goedgekeurde marge ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}), wat het snelheidsinterval vergroot.",
@@ -518,7 +536,7 @@ TRANSLATIONS = {
         "vs_edr": "vs EDR",
         "mean_offset": "Gemiddelde afwijking",
         "range_width": "Intervalbreedte",
-        "success_msg": "Voor een EDR aangegeven snelheid van **{v_edr:.1f} km/h**, is de werkelijke snelheid bij constante rijomstandigheden nauwkeurig begrensd binnen het interval **[{v_min:.2f} km/h — {v_max:.2f} km/h]**.",
+        "success_msg": "Voor een EDR aangegeven snelheid van **{v_edr:.1f} km/h**, is de werkelijke snelheid bij constante rijomstandigheden nauwkeurig begrensd binnen het interval **[{v_min} km/h — {v_max} km/h]**.",
         "chart_header": "📊 Vergelijkende Grafiek: EDR vs Werkelijke Snelheid & Wettelijke Limieten",
         "chart_title": "Calibratiecurve - {veh_name}",
         "chart_xaxis": "EDR Aangegeven Snelheid / Snelheidsmeter (km/h)",
@@ -542,7 +560,7 @@ TRANSLATIONS = {
         "f5_name": "5. Standaarddeviatie Test (2·SD + VBOX Nauwkeurigheid)",
         "f5_eff": "Statistische marge voor teststabiliteit",
         "f6_name": "EINDRESULTAAT BEGRENSD INTERVAL",
-        "f6_eff": "Uiteindelijk begrensd bereik ({width:.2f} km/h)",
+        "f6_eff": "Uiteindelijk begrensd bereik ({width} km/h)",
         "pdf_header": "📄 Forensisch PDF Rapport Genereren",
         "pdf_button": "📥 Forensisch Rapport Downloaden (PDF)",
         "expander_title": "📚 Empirische Database van 16 Geteste Voertuigen Bekijken (EVU 2026)",
@@ -555,6 +573,9 @@ TRANSLATIONS = {
         "pdf_just": "De berekening houdt rekening met de 4 foutenbronnen uit de studie:\n1. 1 km/h digitaliseringsafronding volgens UN R160.\n2. Dubbele geometrische bandencorrectie (verhouding gemonteerde / geprogrammeerde omtrek).\n3. Empirische afwijking gemeten met VBOX bij constante rijomstandigheden.\n4. 95% statistisch betrouwbaarheidsinterval (2xSD + VBOX nauwkeurigheid).\n\nConclusie: De gerapporteerde EDR-snelheid overschat de werkelijke snelheid bij constante rit."
 },
     "de": {
+        "decimal_select_label": "Dezimalstellen-Präzision:",
+        "decimal_option_1": "1 Dezimalstelle (z.B. 47.6 km/h)",
+        "decimal_option_2": "2 Dezimalstellen (z.B. 47.61 km/h)",
         "unknown_fit_check": "Unbekannter montierter Reifen",
         "unknown_prog_check": "Unbekannter ECU programmierter Reifen",
         "unknown_warning": "⚠️ Wenn Reifen als unbekannt markiert sind, berechnet die App die vollständige Einhüllende im zugelassenen Bereich ({w_min}/{a_min} R{r_min} — {w_max}/{a_max} R{r_max}), was das Geschwindigkeitsintervall erweitert.",
@@ -607,7 +628,7 @@ TRANSLATIONS = {
         "vs_edr": "vs EDR",
         "mean_offset": "Mittlerer Abweichungswert",
         "range_width": "Intervallbreite",
-        "success_msg": "Für eine indizierte EDR-Geschwindigkeit von **{v_edr:.1f} km/h** wird die reale Geschwindigkeit bei stabiler Fahrt präzise im Intervall **[{v_min:.2f} km/h — {v_max:.2f} km/h]** eingegrenzt.",
+        "success_msg": "Für eine indizierte EDR-Geschwindigkeit von **{v_edr:.1f} km/h** wird die reale Geschwindigkeit bei stabiler Fahrt präzise im Intervall **[{v_min} km/h — {v_max} km/h]** eingegrenzt.",
         "chart_header": "📊 Vergleichsdiagramm: EDR vs Reale Geschwindigkeit & Normgrenzen",
         "chart_title": "Kalibrierkurve - {veh_name}",
         "chart_xaxis": "EDR Indizierte Geschwindigkeit / Tacho (km/h)",
@@ -631,7 +652,7 @@ TRANSLATIONS = {
         "f5_name": "5. Test-Standardabweichung (2·SD + VBOX-Genauigkeit)",
         "f5_eff": "Statistischer Marge für Teststabilität",
         "f6_name": "EENDERGEBNIS EINGEGRENZTES INTERVALL",
-        "f6_eff": "Finale Intervallbreite ({width:.2f} km/h)",
+        "f6_eff": "Finale Intervallbreite ({width} km/h)",
         "pdf_header": "📄 Erstellung des Forensischen PDF-Gutachtens",
         "pdf_button": "📥 Forensisches Gutachten Herunterladen (PDF)",
         "expander_title": "📚 Empirische Datenbank von 16 Getesteten Fahrzeugen Anzeigen (EVU 2026)",
@@ -853,6 +874,15 @@ selected_lang_label = st.sidebar.selectbox("🌐 Idioma / Language / Llengua / L
 lang_code = lang_options[selected_lang_label]
 t = TRANSLATIONS[lang_code]
 
+# Selector de precisión de decimales
+dec_option = st.sidebar.radio(
+    t["decimal_select_label"],
+    options=[1, 2],
+    index=0,
+    format_func=lambda x: t["decimal_option_1"] if x == 1 else t["decimal_option_2"]
+)
+dec_fmt = f".{dec_option}f"
+
 # ==========================================
 # FUNCIONES MATEMÁTICAS Y GEOMÉTRICAS
 # ==========================================
@@ -1021,15 +1051,15 @@ if use_range or unk_fitted or unk_prog:
     c_max = max(c_min_calc, c_max_calc)
 
     if unk_fitted:
-        ratio1_min = c_min / c_test_prog
-        ratio1_max = c_max / c_test_prog
-        ratio1 = (c_min + c_max) / 2.0 / c_test_prog
+        ratio1_min = c_min / c_test_fitted
+        ratio1_max = c_max / c_test_fitted
+        ratio1 = (c_min + c_max) / 2.0 / c_test_fitted
     elif use_range_user:
-        ratio1_min = min(c_crash_fitted, c_min) / c_test_prog
-        ratio1_max = max(c_crash_fitted, c_max) / c_test_prog
-        ratio1 = c_crash_fitted / c_test_prog
+        ratio1_min = min(c_crash_fitted, c_min) / c_test_fitted
+        ratio1_max = max(c_crash_fitted, c_max) / c_test_fitted
+        ratio1 = c_crash_fitted / c_test_fitted
     else:
-        ratio1 = c_crash_fitted / c_test_prog
+        ratio1 = c_crash_fitted / c_test_fitted
         ratio1_min = ratio1_max = ratio1
 
     if unk_prog:
@@ -1044,7 +1074,7 @@ if use_range or unk_fitted or unk_prog:
         ratio2 = c_crash_prog / c_test_prog
         ratio2_min = ratio2_max = ratio2
 else:
-    ratio1 = c_crash_fitted / c_test_prog
+    ratio1 = c_crash_fitted / c_test_fitted
     ratio2 = c_crash_prog / c_test_prog
     ratio1_min = ratio1_max = ratio1
     ratio2_min = ratio2_max = ratio2
@@ -1076,33 +1106,33 @@ col_kpi1, col_kpi2, col_kpi3, col_kpi4 = st.columns(4)
 with col_kpi1:
     st.metric(
         label=t["kpi1"],
-        value=f"{v_real_min:.2f} km/h",
-        delta=f"{(v_real_min - v_edr_input):.2f} km/h {t['vs_edr']}"
+        value=f"{v_real_min:{dec_fmt}} km/h",
+        delta=f"{(v_real_min - v_edr_input):{dec_fmt}} km/h {t['vs_edr']}"
     )
 
 with col_kpi2:
     st.metric(
         label=t["kpi2"],
-        value=f"{v_real_max:.2f} km/h",
-        delta=f"{(v_real_max - v_edr_input):.2f} km/h {t['vs_edr']}"
+        value=f"{v_real_max:{dec_fmt}} km/h",
+        delta=f"{(v_real_max - v_edr_input):{dec_fmt}} km/h {t['vs_edr']}"
     )
 
 with col_kpi3:
     st.metric(
         label=t["kpi3"],
-        value=f"{v_nominal:.2f} km/h",
-        delta=f"{t['mean_offset']}: -{diff_exp:.2f} km/h"
+        value=f"{v_nominal:{dec_fmt}} km/h",
+        delta=f"{t['mean_offset']}: -{diff_exp:{dec_fmt}} km/h"
     )
 
 with col_kpi4:
     st.metric(
         label=t["kpi4"],
         value=f"{reduction_pct:.1f}%",
-        delta=f"{t['range_width']}: {width_real:.2f} km/h vs {width_un39:.2f} UN R39",
+        delta=f"{t['range_width']}: {width_real:{dec_fmt}} km/h vs {width_un39:{dec_fmt}} UN R39",
         delta_color="normal"
     )
 
-st.success(t["success_msg"].format(v_edr=v_edr_input, v_min=v_real_min, v_max=v_real_max))
+st.success(t["success_msg"].format(v_edr=v_edr_input, v_min=f"{v_real_min:{dec_fmt}}", v_max=f"{v_real_max:{dec_fmt}}"))
 
 # ==========================================
 # GRÁFICO INTERACTIVO (PLOTLY)
@@ -1172,7 +1202,7 @@ breakdown_data = {
     ],
     t["col_value"]: [
         f"[{v_edr_min:.1f} — {v_edr_max:.1f}] km/h",
-        f"Ratio 1 = [{ratio1_min:.4f} — {ratio1_max:.4f}] ({t['unknown_str']})" if unk_fitted else f"Ratio 1 = {ratio1:.4f} (Circ: {c_crash_fitted:.1f} vs {c_test_prog:.1f} mm)",
+        f"Ratio 1 = [{ratio1_min:.4f} — {ratio1_max:.4f}] ({t['unknown_str']})" if unk_fitted else f"Ratio 1 = {ratio1:.4f} (Circ: {c_crash_fitted:.1f} vs {c_test_fitted:.1f} mm)",
         f"Ratio 2 = [{ratio2_min:.4f} — {ratio2_max:.4f}] ({t['unknown_str']})" if unk_prog else f"Ratio 2 = {ratio2:.4f} (Circ: {c_crash_prog:.1f} vs {c_test_prog:.1f} mm)",
         f"-{diff_exp:.4f} km/h (a {v_edr_input:.1f} km/h)",
         f"±{(2.0*sd_exp + vbox_acc):.4f} km/h (SD = {sd_exp:.4f}, 95% CI)",
@@ -1218,10 +1248,10 @@ def generate_pdf():
     pdf.set_font("Arial", "B", 12)
     pdf.cell(0, 8, t["pdf_sec2"], ln=True)
     pdf.set_font("Arial", "B", 11)
-    pdf.cell(0, 7, f"True Speed Bounded Interval: [{v_real_min:.2f} km/h - {v_real_max:.2f} km/h]", ln=True)
-    pdf.cell(0, 6, f"Estimated Nominal Speed: {v_nominal:.2f} km/h", ln=True)
+    pdf.cell(0, 7, f"True Speed Bounded Interval: [{v_real_min:{dec_fmt}} km/h - {v_real_max:{dec_fmt}} km/h]", ln=True)
+    pdf.cell(0, 6, f"Estimated Nominal Speed: {v_nominal:{dec_fmt}} km/h", ln=True)
     pdf.set_font("Arial", "", 10)
-    pdf.cell(0, 6, f"Range Width: {width_real:.2f} km/h (vs {width_un39:.2f} km/h UN R39 theoretical)", ln=True)
+    pdf.cell(0, 6, f"Range Width: {width_real:{dec_fmt}} km/h (vs {width_un39:{dec_fmt}} km/h UN R39 theoretical)", ln=True)
     pdf.cell(0, 6, f"Uncertainty Reduction: {reduction_pct:.1f}% vs UN R39", ln=True)
     pdf.ln(5)
     
