@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
-from fpdf import FPDF
+from fpdf import FPDF, XPos, YPos
 
 # ==========================================
 # CONFIGURACIÓN DE PÁGINA
@@ -1261,50 +1261,67 @@ st.table(pd.DataFrame(breakdown_data))
 st.divider()
 st.subheader(t["pdf_header"])
 
+def sanitize_pdf_text(text):
+    if not isinstance(text, str):
+        return str(text)
+    replacements = {
+        'Ž': 'Z', 'ž': 'z',
+        '—': '-', '–': '-',
+        '’': "'", '‘': "'", '”': '"', '“': '"',
+        '•': '-', '°': ' deg',
+        'ș': 's', 'Ț': 'T', 'ț': 't', 'ă': 'a', 'â': 'a', 'ş': 's', 'Ş': 'S', 'ţ': 't', 'Ţ': 'T',
+        '**': '', '*': ''
+    }
+    for orig, repl in replacements.items():
+        text = text.replace(orig, repl)
+    return text.encode('latin-1', 'replace').decode('latin-1')
+
 def generate_pdf():
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font("Arial", "B", 16)
+    pdf.set_font("Helvetica", "B", 16)
     
-    pdf.cell(0, 10, t["pdf_title"], ln=True, align="C")
-    pdf.set_font("Arial", "", 10)
-    pdf.cell(0, 5, t["pdf_sub"], ln=True, align="C")
+    pdf.cell(0, 10, sanitize_pdf_text(t["pdf_title"]), new_x=XPos.LMARGIN, new_y=YPos.NEXT, align="C")
+    pdf.set_font("Helvetica", "", 10)
+    pdf.cell(0, 5, sanitize_pdf_text(t["pdf_sub"]), new_x=XPos.LMARGIN, new_y=YPos.NEXT, align="C")
     pdf.ln(10)
     
-    pdf.set_font("Arial", "B", 12)
-    pdf.cell(0, 8, t["pdf_sec1"], ln=True)
-    pdf.set_font("Arial", "", 10)
-    pdf.cell(0, 6, f"- EDR Indicated Speed: {v_edr_input:.1f} km/h", ln=True)
-    pdf.cell(0, 6, f"- Reference Vehicle: {selected_veh_name}", ln=True)
-    pdf.cell(0, 6, f"- Accident Vehicle Fitted Tire: {crash_fitted_str}", ln=True)
-    pdf.cell(0, 6, f"- Accident Vehicle ECU Prog Tire: {crash_prog_str}", ln=True)
+    pdf.set_font("Helvetica", "B", 12)
+    pdf.cell(0, 8, sanitize_pdf_text(t["pdf_sec1"]), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_font("Helvetica", "", 10)
+    pdf.cell(0, 6, sanitize_pdf_text(f"- EDR Indicated Speed: {v_edr_input:.1f} km/h"), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.cell(0, 6, sanitize_pdf_text(f"- Reference Vehicle: {selected_veh_name}"), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.cell(0, 6, sanitize_pdf_text(f"- Accident Vehicle Fitted Tire: {crash_fitted_str}"), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.cell(0, 6, sanitize_pdf_text(f"- Accident Vehicle ECU Prog Tire: {crash_prog_str}"), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
     pdf.ln(5)
     
-    pdf.set_font("Arial", "B", 12)
-    pdf.cell(0, 8, t["pdf_sec2"], ln=True)
-    pdf.set_font("Arial", "B", 11)
-    pdf.cell(0, 7, f"True Speed Bounded Interval: [{v_real_min:{dec_fmt}} km/h - {v_real_max:{dec_fmt}} km/h]", ln=True)
-    pdf.cell(0, 6, f"Estimated Nominal Speed: {v_nominal:{dec_fmt}} km/h", ln=True)
-    pdf.set_font("Arial", "", 10)
-    pdf.cell(0, 6, f"Range Width: {width_real:{dec_fmt}} km/h (vs {width_un39:{dec_fmt}} km/h UN R39 theoretical)", ln=True)
-    pdf.cell(0, 6, f"Uncertainty Reduction: {reduction_pct:.1f}% vs UN R39", ln=True)
+    pdf.set_font("Helvetica", "B", 12)
+    pdf.cell(0, 8, sanitize_pdf_text(t["pdf_sec2"]), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_font("Helvetica", "B", 11)
+    pdf.cell(0, 7, sanitize_pdf_text(f"True Speed Bounded Interval: [{v_real_min:{dec_fmt}} km/h - {v_real_max:{dec_fmt}} km/h]"), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.cell(0, 6, sanitize_pdf_text(f"Estimated Nominal Speed: {v_nominal:{dec_fmt}} km/h"), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_font("Helvetica", "", 10)
+    pdf.cell(0, 6, sanitize_pdf_text(f"Range Width: {width_real:{dec_fmt}} km/h (vs {width_un39:{dec_fmt}} km/h UN R39 theoretical)"), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.cell(0, 6, sanitize_pdf_text(f"Uncertainty Reduction: {reduction_pct:.1f}% vs UN R39"), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
     pdf.ln(5)
     
-    pdf.set_font("Arial", "B", 12)
-    pdf.cell(0, 8, t["pdf_sec3"], ln=True)
-    pdf.set_font("Arial", "", 9)
-    pdf.multi_cell(0, 5, t["pdf_just"])
+    pdf.set_font("Helvetica", "B", 12)
+    pdf.cell(0, 8, sanitize_pdf_text(t["pdf_sec3"]), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_font("Helvetica", "", 9)
+    pdf.multi_cell(0, 5, sanitize_pdf_text(t["pdf_just"]))
     
     return bytes(pdf.output())
 
-pdf_bytes = generate_pdf()
-
-st.download_button(
-    label=t["pdf_button"],
-    data=pdf_bytes,
-    file_name=f"EDR_Speed_Report_{v_edr_input:.0f}kmh.pdf",
-    mime="application/pdf"
-)
+try:
+    pdf_bytes = generate_pdf()
+    st.download_button(
+        label=t["pdf_button"],
+        data=pdf_bytes,
+        file_name=f"EDR_Speed_Report_{v_edr_input:.0f}kmh.pdf",
+        mime="application/pdf"
+    )
+except Exception as pdf_err:
+    st.error(f"Error al generar PDF: {pdf_err}")
 
 
 # ==========================================
