@@ -890,14 +890,7 @@ selected_lang_label = st.sidebar.selectbox("🌐 Idioma / Language / Llengua / L
 lang_code = lang_options[selected_lang_label]
 t = TRANSLATIONS[lang_code]
 
-# Selector de precisión de decimales
-dec_option = st.sidebar.radio(
-    t["decimal_select_label"],
-    options=[1, 2],
-    index=0,
-    format_func=lambda x: t["decimal_option_1"] if x == 1 else t["decimal_option_2"]
-)
-dec_fmt = f".{dec_option}f"
+# (Selector de precisión movido a la parte inferior de la barra lateral)
 
 # ==========================================
 # FUNCIONES MATEMÁTICAS Y GEOMÉTRICAS
@@ -1061,6 +1054,16 @@ if use_range or unk_fitted or unk_prog:
             w_min=w_min, a_min=a_min, r_min=r_min,
             w_max=w_max, a_max=a_max, r_max=r_max
         ))
+
+# Selector de precisión de decimales (Ubicado abajo en el panel izquierdo)
+st.sidebar.markdown("---")
+dec_option = st.sidebar.radio(
+    t["decimal_select_label"],
+    options=[1, 2],
+    index=0,
+    format_func=lambda x: t["decimal_option_1"] if x == 1 else t["decimal_option_2"]
+)
+dec_fmt = f".{dec_option}f"
 
 # ==========================================
 # CÁLCULOS PRINCIPALES
