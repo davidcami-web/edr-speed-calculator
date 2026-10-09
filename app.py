@@ -676,6 +676,7 @@ VEHICLES_DB = {
         "year": 2018,
         "fitted_test": "225/50 R17",
         "prog_test": "205/60 R16",
+        "approved_tires": ["205/60 R16", "225/55 R16", "225/35 R20", "225/30 R20", "225/40 R19", "225/35 R19", "225/45 R18", "225/40 R18", "225/50 R17"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.922, 67.444, 87.044, 106.502, 125.995],
         "diff": [2.078, 2.556, 2.956, 3.498, 4.005],
@@ -686,6 +687,7 @@ VEHICLES_DB = {
         "year": 2024,
         "fitted_test": "245/50 R19",
         "prog_test": "245/50 R19",
+        "approved_tires": ["225/60 R18", "285/30 R22", "245/50 R19", "285/35 R21", "255/35 R22", "285/40 R20", "255/40 R21", "255/45 R20"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.854, 87.803, 87.803, 107.100, 126.354],
         "diff": [2.819, 3.409, 3.409, 4.400, 5.397],
@@ -696,6 +698,7 @@ VEHICLES_DB = {
         "year": 2024,
         "fitted_test": "245/40 R19",
         "prog_test": "255/45 R18",
+        "approved_tires": ["225/55 R17", "255/40 R19", "245/35 R20", "255/45 R18", "245/40 R19", "255/35 R20"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [48.013, 67.284, 87.827, 106.213, 128.054],
         "diff": [1.397, 1.890, 1.112, 2.489, 0.413],
@@ -706,6 +709,7 @@ VEHICLES_DB = {
         "year": 2024,
         "fitted_test": "225/55 R18",
         "prog_test": "225/55 R18",
+        "approved_tires": ["205/60 R18", "205/65 R17", "225/55 R18", "245/40 R20", "245/45 R19"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.827, 68.655, 88.031, 109.873, 127.528],
         "diff": [2.174, 1.345, 1.969, 0.127, 2.472],
@@ -715,7 +719,8 @@ VEHICLES_DB = {
         "name": "BMW 2 Series 220d (2025)",
         "year": 2025,
         "fitted_test": "225/45 R18",
-        "prog_test": "225/45 R18",
+        "prog_test": "225/40 R19",
+        "approved_tires": ["195/45 R19", "195/50 R18", "225/40 R19", "225/45 R18", "235/40 R19"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [48.557, 68.633, 88.468, 108.523, 128.378],
         "diff": [1.443, 1.367, 1.522, 1.477, 1.622],
@@ -726,6 +731,7 @@ VEHICLES_DB = {
         "year": 2020,
         "fitted_test": "225/50 R18",
         "prog_test": "225/50 R18",
+        "approved_tires": ["225/55 R17", "205/60 R17", "225/40 R20", "225/45 R19", "225/50 R18"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.509, 66.999, 86.262, 105.672, 125.179],
         "diff": [2.491, 3.001, 3.738, 4.328, 4.821],
@@ -735,7 +741,8 @@ VEHICLES_DB = {
         "name": "Mini Cooper SE (2024)",
         "year": 2024,
         "fitted_test": "215/45 R17",
-        "prog_test": "215/45 R17",
+        "prog_test": "225/40 R18",
+        "approved_tires": ["195/55 R17", "195/60 R16", "205/50 R17", "225/40 R18"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [48.442, 68.143, 88.001, 107.803, 127.569],
         "diff": [1.558, 1.857, 1.999, 2.197, 2.431],
@@ -745,7 +752,8 @@ VEHICLES_DB = {
         "name": "Mini Aceman SE (2025)",
         "year": 2025,
         "fitted_test": "225/40 R19",
-        "prog_test": "205/50 R18",
+        "prog_test": "225/40 R18",
+        "approved_tires": ["195/60 R17", "205/55 R17", "225/40 R19", "225/45 R18"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [48.276, 67.888, 88.202, 107.803, 127.567],
         "diff": [1.724, 2.112, 1.798, 2.197, 2.433],
@@ -755,7 +763,8 @@ VEHICLES_DB = {
         "name": "Mini Countryman C (2024)",
         "year": 2024,
         "fitted_test": "245/45 R19",
-        "prog_test": "225/55 R17",
+        "prog_test": "245/45 R19",
+        "approved_tires": ["195/55 R19", "205/60 R18", "205/65 R17", "225/55 R18", "245/35 R21", "245/40 R20", "245/45 R19"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.902, 68.508, 87.697, 107.464, 128.573],
         "diff": [2.098, 1.492, 2.303, 2.536, 1.427],
@@ -765,7 +774,8 @@ VEHICLES_DB = {
         "name": "Kia Sportage (2025)",
         "year": 2025,
         "fitted_test": "235/50 R19",
-        "prog_test": "215/65 R17",
+        "prog_test": "235/50 R19",
+        "approved_tires": ["215/65 R17", "235/55 R18", "235/50 R19"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [46.950, 67.445, 87.262, 107.808, 127.737],
         "diff": [3.050, 2.555, 2.738, 2.192, 2.263],
@@ -775,7 +785,8 @@ VEHICLES_DB = {
         "name": "Toyota C-HR (2024)",
         "year": 2024,
         "fitted_test": "225/50 R18",
-        "prog_test": "215/60 R17",
+        "prog_test": "245/40 R20",
+        "approved_tires": ["225/55 R18", "215/60 R17", "245/40 R20"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.939, 67.501, 87.514, 106.634, 126.047],
         "diff": [2.061, 2.499, 2.486, 3.366, 3.953],
@@ -785,7 +796,8 @@ VEHICLES_DB = {
         "name": "Toyota RAV4 (2023)",
         "year": 2023,
         "fitted_test": "225/60 R18",
-        "prog_test": "225/65 R17",
+        "prog_test": "235/55 R19",
+        "approved_tires": ["235/55 R19", "225/60 R18", "225/65 R17"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.355, 67.262, 87.109, 107.134, 126.857],
         "diff": [2.645, 2.738, 2.891, 2.866, 3.143],
@@ -795,7 +807,8 @@ VEHICLES_DB = {
         "name": "Lexus RZ 450E (2024)",
         "year": 2024,
         "fitted_test": "235/50 R20",
-        "prog_test": "235/60 R18",
+        "prog_test": "255/45 R20",
+        "approved_tires": ["235/50 R20", "255/45 R20"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [48.036, 68.105, 88.017, 108.318, 128.162],
         "diff": [2.337, 2.417, 2.654, 2.502, 2.807],
@@ -805,7 +818,8 @@ VEHICLES_DB = {
         "name": "Hyundai Tucson IX35 (2025)",
         "year": 2025,
         "fitted_test": "235/50 R19",
-        "prog_test": "235/50 R19",
+        "prog_test": "215/65 R17",
+        "approved_tires": ["215/65 R17", "235/55 R18", "235/50 R19"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.729, 67.586, 88.500, 107.106, 126.875],
         "diff": [2.271, 2.414, 1.500, 2.894, 3.125],
@@ -816,6 +830,7 @@ VEHICLES_DB = {
         "year": 2024,
         "fitted_test": "175/60 R16",
         "prog_test": "175/60 R16",
+        "approved_tires": ["175/65 R15", "175/60 R16"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [46.190, 66.628, 85.927, 106.577, 125.385],
         "diff": [3.810, 3.372, 4.073, 3.423, 4.615],
@@ -826,6 +841,7 @@ VEHICLES_DB = {
         "year": 2016,
         "fitted_test": "215/55 R17",
         "prog_test": "215/60 R16",
+        "approved_tires": ["215/55 R17", "215/60 R16", "225/45 R18"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.874, 67.235, 87.604, 107.206, 126.919],
         "diff": [2.126, 2.765, 2.396, 2.794, 3.081],
@@ -841,13 +857,13 @@ VEHICLES_DB = {
         "year": 2024,
         "fitted_test": "225/50 R17",
         "prog_test": "225/50 R17",
+        "approved_tires": ["205/60 R16", "225/50 R17", "255/45 R18"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.6, 67.5, 87.5, 107.1, 126.9],
         "diff": [2.4, 2.5, 2.5, 2.9, 3.1],
         "sd": [0.4, 0.4, 0.4, 0.4, 0.4]
     }
 }
-
 # ==========================================
 # SELECTOR DE IDIOMA EN BARRA LATERAL
 # ==========================================
@@ -1011,18 +1027,34 @@ st.sidebar.caption(f"**{t['test_prog']}** {veh_info['prog_test']}")
 use_range_user = st.sidebar.checkbox(t["use_range"], value=False)
 use_range = use_range_user or unk_fitted or unk_prog
 
+# Helper function to get min and max tire dimensions from approved tires list
+def get_approved_range_defaults(veh_data):
+    if "approved_tires" in veh_data and veh_data["approved_tires"]:
+        circ_list = []
+        for tire_str in veh_data["approved_tires"]:
+            w, a, r = parse_tire_str(tire_str)
+            _, c = calc_tire_geometry(w, a, r)
+            circ_list.append((c, int(w), int(a), int(r)))
+        circ_list.sort(key=lambda x: x[0])
+        min_tuple = circ_list[0]
+        max_tuple = circ_list[-1]
+        return min_tuple[1], min_tuple[2], min_tuple[3], max_tuple[1], max_tuple[2], max_tuple[3]
+    return 225, 40, 18, 255, 55, 18
+
+def_wmin, def_amin, def_rmin, def_wmax, def_amax, def_rmax = get_approved_range_defaults(veh_info)
+
 # Default range bounds
 if use_range or unk_fitted or unk_prog:
     st.sidebar.markdown(f"**{t['range_section']}**")
     col_r1, col_r2 = st.sidebar.columns(2)
     with col_r1:
-        w_min = st.number_input(t["w_min"], 135, 335, 225, 5, key=f"wmin_{selected_key}")
-        a_min = st.number_input(t["a_min"], 25, 80, 40, 5, key=f"amin_{selected_key}")
-        r_min = st.number_input(t["r_min"], 13, 23, 18, 1, key=f"rmin_{selected_key}")
+        w_min = st.number_input(t["w_min"], 135, 335, def_wmin, 5, key=f"wmin_{selected_key}")
+        a_min = st.number_input(t["a_min"], 25, 80, def_amin, 5, key=f"amin_{selected_key}")
+        r_min = st.number_input(t["r_min"], 13, 23, def_rmin, 1, key=f"rmin_{selected_key}")
     with col_r2:
-        w_max = st.number_input(t["w_max"], 135, 335, 255, 5, key=f"wmax_{selected_key}")
-        a_max = st.number_input(t["a_max"], 25, 80, 55, 5, key=f"amax_{selected_key}")
-        r_max = st.number_input(t["r_max"], 13, 23, 18, 1, key=f"rmax_{selected_key}")
+        w_max = st.number_input(t["w_max"], 135, 335, def_wmax, 5, key=f"wmax_{selected_key}")
+        a_max = st.number_input(t["a_max"], 25, 80, def_amax, 5, key=f"amax_{selected_key}")
+        r_max = st.number_input(t["r_max"], 13, 23, def_rmax, 1, key=f"rmax_{selected_key}")
     
     if unk_fitted or unk_prog:
         st.sidebar.warning(t["unknown_warning"].format(
