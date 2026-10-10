@@ -720,7 +720,7 @@ VEHICLES_DB = {
         "name": "BMW 2 Series 220d (2025)",
         "year": 2025,
         "fitted_test": "225/45 R18",
-        "prog_test": "225/40 R19",
+        "prog_test": "225/45 R18",
         "approved_tires": ["195/45 R19", "195/50 R18", "225/40 R19", "225/45 R18", "235/40 R19"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [48.557, 68.633, 88.468, 108.523, 128.378],
@@ -742,7 +742,7 @@ VEHICLES_DB = {
         "name": "Mini Cooper SE (2024)",
         "year": 2024,
         "fitted_test": "215/45 R17",
-        "prog_test": "225/40 R18",
+        "prog_test": "215/45 R17",
         "approved_tires": ["195/55 R17", "195/60 R16", "205/50 R17", "225/40 R18"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [48.442, 68.143, 88.001, 107.803, 127.569],
@@ -796,7 +796,7 @@ VEHICLES_DB = {
     "12": {
         "name": "Toyota RAV4 (2023)",
         "year": 2023,
-        "fitted_test": "225/60 R18",
+        "fitted_test": "235/55 R19",
         "prog_test": "235/55 R19",
         "approved_tires": ["235/55 R19", "225/60 R18", "225/65 R17"],
         "speeds": [50, 70, 90, 110, 130],
@@ -819,7 +819,7 @@ VEHICLES_DB = {
         "name": "Hyundai Tucson IX35 (2025)",
         "year": 2025,
         "fitted_test": "235/50 R19",
-        "prog_test": "215/65 R17",
+        "prog_test": "235/50 R19",
         "approved_tires": ["215/65 R17", "235/55 R18", "235/50 R19"],
         "speeds": [50, 70, 90, 110, 130],
         "vbox": [47.729, 67.586, 88.500, 107.106, 126.875],
@@ -913,342 +913,199 @@ def calc_tire_geometry(width, aspect, rim):
     return diameter_mm, circumference_mm
 
 def interpolate_test_data(vehicle_key, v_edr):
-    ALL_VEHICLES_DB = {**VEHICLES_DB, **st.session_state.custom_vehicles}
-    v_data = ALL_VEHICLES_DB[vehicle_key]
-    speeds = np.array(v_data["speeds"])
-    diffs = np.array(v_data["diff"])
-    sds = np.array(v_data["sd"])
-
-    if v_edr <= speeds[0]:
-        diff_interp = float(diffs[0])
-        sd_interp = float(sds[0])
-    elif v_edr >= speeds[-1]:
-        diff_interp = float(diffs[-1])
-        sd_interp = float(sds[-1])
-    else:
-        diff_interp = float(np.interp(v_edr, speeds, diffs))
-        sd_interp = float(np.interp(v_edr, speeds, sds))
-
-    # Mantener precisión técnica de al menos 4 decimales para los cálculos intermedios
-    return round(diff_interp, 4), round(sd_interp, 4)
-
-def get_vehicle_name(key, lang):
-    ALL_VEHICLES_DB = {**VEHICLES_DB, **st.session_state.custom_vehicles}
-    v = ALL_VEHICLES_DB[key]
-    if key == "GENERIC":
-        return v["name_keys"].get(lang, v["name_keys"]["es"])
-    return v["name"]
-
-# ==========================================
-# HEADER Y METADATOS EN PANTALLA
-# ==========================================
-st.title(t["title"])
-st.markdown(t["subtitle"])
-st.divider()
-
-# ==========================================
-# BARRA LATERAL (INPUTS DEL RECONSTRUCTOR)
-# ==========================================
-st.sidebar.header(t["sidebar_header"])
-
-v_edr_input = st.sidebar.number_input(
-    t["v_edr_label"],
-    min_value=10.0,
-    max_value=250.0,
-    value=50.0,
-    step=1.0,
-    help=t["v_edr_help"]
-)
-
-ALL_VEHICLES_DB = {**VEHICLES_DB, **st.session_state.custom_vehicles}
-veh_keys = list(ALL_VEHICLES_DB.keys())
-veh_names = [get_vehicle_name(k, lang_code) for k in veh_keys]
-
-selected_veh_idx = st.sidebar.selectbox(
-    t["veh_select_label"],
-    options=range(len(veh_names)),
-    format_func=lambda i: veh_names[i],
-    index=2
-)
-selected_key = veh_keys[selected_veh_idx]
-veh_info = ALL_VEHICLES_DB[selected_key]
-selected_veh_name = get_vehicle_name(selected_key, lang_code)
-
-st.sidebar.subheader(t["tire_section"])
-
-col_unk1, col_unk2 = st.sidebar.columns(2)
-with col_unk1:
-    unk_fitted = st.checkbox(t["unknown_fit_check"], value=False, key=f"unk_fit_{selected_key}")
-with col_unk2:
-    unk_prog = st.checkbox(t["unknown_prog_check"], value=False, key=f"unk_prog_{selected_key}")
-
-use_custom_tires = st.sidebar.checkbox(t["customize_tires"], value=True)
-
-def_w_f, def_a_f, def_r_f = parse_tire_str(veh_info["fitted_test"])
-def_w_p, def_a_p, def_r_p = parse_tire_str(veh_info["prog_test"])
-
-if use_custom_tires:
-    col_t1, col_t2 = st.sidebar.columns(2)
-    with col_t1:
-        if not unk_fitted:
-            w_fit = st.number_input(t["w_fit"], 135, 335, int(def_w_f), 5, key=f"wf_{selected_key}")
-            a_fit = st.number_input(t["a_fit"], 25, 80, int(def_a_f), 5, key=f"af_{selected_key}")
-            r_fit = st.number_input(t["r_fit"], 13, 23, int(def_r_f), 1, key=f"rf_{selected_key}")
-        else:
-            st.info(f"**{t['unk_fit_title']}**:\n{t['unknown_str']}")
-            w_fit, a_fit, r_fit = def_w_f, def_a_f, def_r_f
-    with col_t2:
-        if not unk_prog:
-            w_prog = st.number_input(t["w_prog"], 135, 335, int(def_w_p), 5, key=f"wp_{selected_key}")
-            a_prog = st.number_input(t["a_prog"], 25, 80, int(def_a_p), 5, key=f"ap_{selected_key}")
-            r_prog = st.number_input(t["r_prog"], 13, 23, int(def_r_p), 1, key=f"rp_{selected_key}")
-        else:
-            st.info(f"**{t['unk_prog_title']}**:\n{t['unknown_str']}")
-            w_prog, a_prog, r_prog = def_w_p, def_a_p, def_r_p
-else:
-    w_fit, a_fit, r_fit = parse_tire_str(veh_info["fitted_test"])
-    w_prog, a_prog, r_prog = parse_tire_str(veh_info["prog_test"])
-
-crash_fitted_str = t["unknown_str"] if unk_fitted else f"{w_fit}/{a_fit} R{r_fit}"
-crash_prog_str = t["unknown_str"] if unk_prog else f"{w_prog}/{a_prog} R{r_prog}"
-
-st.sidebar.caption(f"**{t['test_fitted']}** {veh_info['fitted_test']}")
-st.sidebar.caption(f"**{t['test_prog']}** {veh_info['prog_test']}")
-
-use_range_user = st.sidebar.checkbox(t["use_range"], value=False)
-use_range = use_range_user or unk_fitted or unk_prog
-
-# Helper function to get min and max tire dimensions from approved tires list
-def get_approved_range_defaults(veh_data):
-    if "approved_tires" in veh_data and veh_data["approved_tires"]:
-        circ_list = []
-        for tire_str in veh_data["approved_tires"]:
-            w, a, r = parse_tire_str(tire_str)
-            _, c = calc_tire_geometry(w, a, r)
-            circ_list.append((c, int(w), int(a), int(r)))
-        circ_list.sort(key=lambda x: x[0])
-        min_tuple = circ_list[0]
-        max_tuple = circ_list[-1]
-        return min_tuple[1], min_tuple[2], min_tuple[3], max_tuple[1], max_tuple[2], max_tuple[3]
-    return 225, 40, 18, 255, 55, 18
-
-def_wmin, def_amin, def_rmin, def_wmax, def_amax, def_rmax = get_approved_range_defaults(veh_info)
-
-# Default range bounds
-if use_range or unk_fitted or unk_prog:
-    st.sidebar.markdown(f"**{t['range_section']}**")
-    col_r1, col_r2 = st.sidebar.columns(2)
-    with col_r1:
-        w_min = st.number_input(t["w_min"], 135, 335, def_wmin, 5, key=f"wmin_{selected_key}")
-        a_min = st.number_input(t["a_min"], 25, 80, def_amin, 5, key=f"amin_{selected_key}")
-        r_min = st.number_input(t["r_min"], 13, 23, def_rmin, 1, key=f"rmin_{selected_key}")
-    with col_r2:
-        w_max = st.number_input(t["w_max"], 135, 335, def_wmax, 5, key=f"wmax_{selected_key}")
-        a_max = st.number_input(t["a_max"], 25, 80, def_amax, 5, key=f"amax_{selected_key}")
-        r_max = st.number_input(t["r_max"], 13, 23, def_rmax, 1, key=f"rmax_{selected_key}")
-    
-    if unk_fitted or unk_prog:
-        st.sidebar.warning(t["unknown_warning"].format(
-            w_min=w_min, a_min=a_min, r_min=r_min,
-            w_max=w_max, a_max=a_max, r_max=r_max
-        ))
-
-# Selector de precisión de decimales (Ubicado abajo en el panel izquierdo)
-st.sidebar.markdown("---")
-dec_option = st.sidebar.radio(
-    t["decimal_select_label"],
-    options=[1, 2],
-    index=0,
-    format_func=lambda x: t["decimal_option_1"] if x == 1 else t["decimal_option_2"]
-)
-dec_fmt = f".{dec_option}f"
-
-# ==========================================
-# CÁLCULOS PRINCIPALES
-# ==========================================
-v_edr_min = v_edr_input
-v_edr_max = v_edr_input + 1.0
-
-_, c_crash_fitted = calc_tire_geometry(w_fit, a_fit, r_fit)
-_, c_crash_prog = calc_tire_geometry(w_prog, a_prog, r_prog)
-
-w_tf, a_tf, r_tf = parse_tire_str(veh_info["fitted_test"])
-w_tp, a_tp, r_tp = parse_tire_str(veh_info["prog_test"])
-_, c_test_fitted = calc_tire_geometry(w_tf, a_tf, r_tf)
-_, c_test_prog = calc_tire_geometry(w_tp, a_tp, r_tp)
-
-if use_range or unk_fitted or unk_prog:
-    _, c_min_calc = calc_tire_geometry(w_min, a_min, r_min)
-    _, c_max_calc = calc_tire_geometry(w_max, a_max, r_max)
-    c_min = min(c_min_calc, c_max_calc)
-    c_max = max(c_min_calc, c_max_calc)
-
-    if unk_fitted:
-        ratio1_min = c_min / c_test_fitted
-        ratio1_max = c_max / c_test_fitted
-        ratio1 = (c_min + c_max) / 2.0 / c_test_fitted
-    elif use_range_user:
-        ratio1_min = min(c_crash_fitted, c_min) / c_test_fitted
-        ratio1_max = max(c_crash_fitted, c_max) / c_test_fitted
-        ratio1 = c_crash_fitted / c_test_fitted
-    else:
-        ratio1 = c_crash_fitted / c_test_fitted
-        ratio1_min = ratio1_max = ratio1
-
-    if unk_prog:
-        ratio2_min = c_min / c_test_prog
-        ratio2_max = c_max / c_test_prog
-        ratio2 = (c_min + c_max) / 2.0 / c_test_prog
-    elif use_range_user:
-        ratio2_min = min(c_crash_prog, c_min) / c_test_prog
-        ratio2_max = max(c_crash_prog, c_max) / c_test_prog
-        ratio2 = c_crash_prog / c_test_prog
-    else:
-        ratio2 = c_crash_prog / c_test_prog
-        ratio2_min = ratio2_max = ratio2
-else:
-    ratio1 = c_crash_fitted / c_test_fitted
-    ratio2 = c_crash_prog / c_test_prog
-    ratio1_min = ratio1_max = ratio1
-    ratio2_min = ratio2_max = ratio2
-
-diff_exp, sd_exp = interpolate_test_data(selected_key, v_edr_input)
-
-vbox_acc = 0.1
-delta_v_test_max_neg = -(diff_exp + (2.0 * sd_exp) + vbox_acc)
-delta_v_test_min_neg = -(max(0.0, diff_exp - (2.0 * sd_exp) - vbox_acc))
-
-v_real_min = (v_edr_min * (ratio1_min / ratio2_max)) + delta_v_test_max_neg
-v_real_max = (v_edr_max * (ratio1_max / ratio2_min)) + delta_v_test_min_neg
-v_nominal = (v_real_min + v_real_max) / 2.0
-
-v_un39_max = v_edr_input
-v_un39_min = (v_edr_input - 6.0) / 1.1
-
-width_un39 = v_un39_max - v_un39_min
-width_real = v_real_max - v_real_min
-reduction_pct = ((width_un39 - width_real) / width_un39) * 100.0
-
-# ==========================================
-# DESPLIEGUE DE RESULTADOS EN MAIN
-# ==========================================
-st.subheader(t["kpi_header"])
-
-col_kpi1, col_kpi2, col_kpi3, col_kpi4 = st.columns(4)
-
-with col_kpi1:
-    st.metric(
-        label=t["kpi1"],
-        value=f"{v_real_min:{dec_fmt}} km/h",
-        delta=f"{(v_real_min - v_edr_input):{dec_fmt}} km/h {t['vs_edr']}"
-    )
-
-with col_kpi2:
-    st.metric(
-        label=t["kpi2"],
-        value=f"{v_real_max:{dec_fmt}} km/h",
-        delta=f"{(v_real_max - v_edr_input):{dec_fmt}} km/h {t['vs_edr']}"
-    )
-
-with col_kpi3:
-    st.metric(
-        label=t["kpi3"],
-        value=f"{v_nominal:{dec_fmt}} km/h",
-        delta=f"{t['mean_offset']}: -{diff_exp:{dec_fmt}} km/h"
-    )
-
-with col_kpi4:
-    st.metric(
-        label=t["kpi4"],
-        value=f"{reduction_pct:.1f}%",
-        delta=f"{t['range_width']}: {width_real:{dec_fmt}} km/h vs {width_un39:{dec_fmt}} UN R39",
-        delta_color="normal"
-    )
-
-st.success(t["success_msg"].format(v_edr=v_edr_input, v_min=f"{v_real_min:{dec_fmt}}", v_max=f"{v_real_max:{dec_fmt}}"))
-
-# ==========================================
-# GRÁFICO INTERACTIVO (PLOTLY)
-# ==========================================
-st.subheader(t["chart_header"])
-
-speed_range = np.linspace(30, 150, 100)
-un39_upper = speed_range
-un39_lower = (speed_range - 6.0) / 1.1
-
-fig = go.Figure()
-
-fig.add_trace(go.Scatter(
-    x=speed_range, y=un39_upper,
-    mode='lines', name=t["un39_upper"],
-    line=dict(color='gray', dash='dash')
-))
-fig.add_trace(go.Scatter(
-    x=speed_range, y=un39_lower,
-    mode='lines', name=t["un39_lower"],
-    line=dict(color='lightgray', dash='dash'),
-    fill='tonexty', fillcolor='rgba(200, 200, 200, 0.2)'
-))
-
-v_test_speeds = np.array(veh_info["speeds"])
-v_test_vbox = np.array(veh_info["vbox"])
-
-fig.add_trace(go.Scatter(
-    x=v_test_speeds, y=v_test_vbox,
-    mode='markers+lines', name=t["vbox_data"].format(veh_name=selected_veh_name),
-    marker=dict(size=8, color='blue')
-))
-
-fig.add_trace(go.Scatter(
-    x=[v_edr_input, v_edr_input],
-    y=[v_real_min, v_real_max],
-    mode='lines+markers',
-    name=t["study_case"],
-    line=dict(color='red', width=4),
-    marker=dict(size=10, symbol='square', color='red')
-))
-
-fig.update_layout(
-    title=t["chart_title"].format(veh_name=selected_veh_name),
-    xaxis_title=t["chart_xaxis"],
-    yaxis_title=t["chart_yaxis"],
-    hovermode="x unified",
-    height=450,
-    margin=dict(l=40, r=40, t=40, b=40)
-)
-
-st.plotly_chart(fig, use_container_width=True)
-
-# ==========================================
-# TABLA DE DESGLOSE DE COMPONENTES DE ERROR
-# ==========================================
-st.subheader(t["breakdown_header"])
-
-breakdown_data = {
-    t["col_factor"]: [
-        t["f1_name"],
-        t["f2_name"],
-        t["f3_name"],
-        t["f4_name"],
-        t["f5_name"],
-        t["f6_name"]
-    ],
-    t["col_value"]: [
-        f"[{v_edr_min:.1f} — {v_edr_max:.1f}] km/h",
-        f"Ratio 1 = [{ratio1_min:.4f} — {ratio1_max:.4f}] ({t['unknown_str']})" if unk_fitted else f"Ratio 1 = {ratio1:.4f} (Circ: {c_crash_fitted:.1f} vs {c_test_fitted:.1f} mm)",
-        f"Ratio 2 = [{ratio2_min:.4f} — {ratio2_max:.4f}] ({t['unknown_str']})" if unk_prog else f"Ratio 2 = {ratio2:.4f} (Circ: {c_crash_prog:.1f} vs {c_test_prog:.1f} mm)",
-        f"-{diff_exp:.4f} km/h (a {v_edr_input:.1f} km/h)",
-        f"±{(2.0*sd_exp + vbox_acc):.4f} km/h (SD = {sd_exp:.4f}, 95% CI)",
-        f"[{v_real_min:.2f} — {v_real_max:.2f}] km/h"
-    ],
-    t["col_effect"]: [
-        t["f1_eff"],
-        t["f2_eff"].format(pct=(ratio1-1.0)*100),
-        t["f3_eff"].format(pct=(1.0/ratio2-1.0)*100),
-        t["f4_eff"],
-        t["f5_eff"],
-        t["f6_eff"].format(width=width_real)
-    ]
+    ALL_VEHICLES_DB = {
+    "1": {
+        "name": "BMW 3 Series 320d xDrive (2018)",
+        "year": 2018,
+        "fitted_test": "225/50 R17",
+        "prog_test": "205/60 R16",
+        "approved_tires": ["205/60 R16", "225/55 R16", "225/35 R20", "225/30 R20", "225/40 R19", "225/35 R19", "225/45 R18", "225/40 R18", "225/50 R17"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.922, 67.444, 87.044, 106.502, 125.995],
+        "diff": [2.078, 2.556, 2.956, 3.498, 4.005],
+        "sd": [0.084, 0.098, 0.136, 0.119, 0.169]
+    },
+    "2": {
+        "name": "BMW X3 xDrive20d (2024)",
+        "year": 2024,
+        "fitted_test": "245/50 R19",
+        "prog_test": "245/50 R19",
+        "approved_tires": ["225/60 R18", "285/30 R22", "245/50 R19", "285/35 R21", "255/35 R22", "285/40 R20", "255/40 R21", "255/45 R20"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.854, 87.803, 87.803, 107.100, 126.354],
+        "diff": [2.819, 3.409, 3.409, 4.400, 5.397],
+        "sd": [0.795, 0.862, 0.862, 0.750, 0.631]
+    },
+    "3": {
+        "name": "BMW i4 eDrive40 (2024)",
+        "year": 2024,
+        "fitted_test": "245/40 R19",
+        "prog_test": "255/45 R18",
+        "approved_tires": ["225/55 R17", "255/40 R19", "245/35 R20", "255/45 R18", "245/40 R19", "255/35 R20"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [48.013, 67.284, 87.827, 106.213, 128.054],
+        "diff": [1.397, 1.890, 1.112, 2.489, 0.413],
+        "sd": [0.379, 0.273, 1.023, 0.370, 1.157]
+    },
+    "4": {
+        "name": "BMW iX1 xDrive30 (2024)",
+        "year": 2024,
+        "fitted_test": "225/55 R18",
+        "prog_test": "225/55 R18",
+        "approved_tires": ["205/60 R18", "205/65 R17", "225/55 R18", "245/40 R20", "245/45 R19"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.827, 68.655, 88.031, 109.873, 127.528],
+        "diff": [2.174, 1.345, 1.969, 0.127, 2.472],
+        "sd": [0.618, 1.152, 0.413, 1.386, 0.540]
+    },
+    "5": {
+        "name": "BMW 2 Series 220d (2025)",
+        "year": 2025,
+        "fitted_test": "225/45 R18",
+        "prog_test": "225/45 R18",
+        "approved_tires": ["195/45 R19", "195/50 R18", "225/40 R19", "225/45 R18", "235/40 R19"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [48.557, 68.633, 88.468, 108.523, 128.378],
+        "diff": [1.443, 1.367, 1.522, 1.477, 1.622],
+        "sd": [0.157, 0.149, 0.436, 0.517, 0.469]
+    },
+    "6": {
+        "name": "BMW X1 xDrive18d (2020)",
+        "year": 2020,
+        "fitted_test": "225/50 R18",
+        "prog_test": "225/50 R18",
+        "approved_tires": ["225/55 R17", "205/60 R17", "225/40 R20", "225/45 R19", "225/50 R18"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.509, 66.999, 86.262, 105.672, 125.179],
+        "diff": [2.491, 3.001, 3.738, 4.328, 4.821],
+        "sd": [0.143, 0.137, 0.126, 0.181, 0.351]
+    },
+    "7": {
+        "name": "Mini Cooper SE (2024)",
+        "year": 2024,
+        "fitted_test": "215/45 R17",
+        "prog_test": "215/45 R17",
+        "approved_tires": ["195/55 R17", "195/60 R16", "205/50 R17", "225/40 R18"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [48.442, 68.143, 88.001, 107.803, 127.569],
+        "diff": [1.558, 1.857, 1.999, 2.197, 2.431],
+        "sd": [0.656, 0.286, 0.103, 0.107, 0.370]
+    },
+    "8": {
+        "name": "Mini Aceman SE (2025)",
+        "year": 2025,
+        "fitted_test": "225/40 R19",
+        "prog_test": "225/40 R18",
+        "approved_tires": ["195/60 R17", "205/55 R17", "225/40 R19", "225/45 R18"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [48.276, 67.888, 88.202, 107.803, 127.567],
+        "diff": [1.724, 2.112, 1.798, 2.197, 2.433],
+        "sd": [0.544, 0.377, 0.331, 0.107, 0.325]
+    },
+    "9": {
+        "name": "Mini Countryman C (2024)",
+        "year": 2024,
+        "fitted_test": "245/45 R19",
+        "prog_test": "245/45 R19",
+        "approved_tires": ["195/55 R19", "205/60 R18", "205/65 R17", "225/55 R18", "245/35 R21", "245/40 R20", "245/45 R19"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.902, 68.508, 87.697, 107.464, 128.573],
+        "diff": [2.098, 1.492, 2.303, 2.536, 1.427],
+        "sd": [0.588, 0.418, 0.593, 0.350, 0.497]
+    },
+    "10": {
+        "name": "Kia Sportage (2025)",
+        "year": 2025,
+        "fitted_test": "235/50 R19",
+        "prog_test": "235/50 R19",
+        "approved_tires": ["215/65 R17", "235/55 R18", "235/50 R19"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [46.950, 67.445, 87.262, 107.808, 127.737],
+        "diff": [3.050, 2.555, 2.738, 2.192, 2.263],
+        "sd": [0.355, 0.201, 0.294, 0.152, 0.145]
+    },
+    "11": {
+        "name": "Toyota C-HR (2024)",
+        "year": 2024,
+        "fitted_test": "225/50 R18",
+        "prog_test": "245/40 R20",
+        "approved_tires": ["225/55 R18", "215/60 R17", "245/40 R20"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.939, 67.501, 87.514, 106.634, 126.047],
+        "diff": [2.061, 2.499, 2.486, 3.366, 3.953],
+        "sd": [0.116, 0.105, 0.278, 0.183, 0.286]
+    },
+    "12": {
+        "name": "Toyota RAV4 (2023)",
+        "year": 2023,
+        "fitted_test": "235/55 R19",
+        "prog_test": "235/55 R19",
+        "approved_tires": ["235/55 R19", "225/60 R18", "225/65 R17"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.355, 67.262, 87.109, 107.134, 126.857],
+        "diff": [2.645, 2.738, 2.891, 2.866, 3.143],
+        "sd": [0.107, 0.099, 0.142, 0.221, 0.230]
+    },
+    "13": {
+        "name": "Lexus RZ 450E (2024)",
+        "year": 2024,
+        "fitted_test": "235/50 R20",
+        "prog_test": "255/45 R20",
+        "approved_tires": ["235/50 R20", "255/45 R20"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [48.036, 68.105, 88.017, 108.318, 128.162],
+        "diff": [2.337, 2.417, 2.654, 2.502, 2.807],
+        "sd": [0.143, 0.082, 0.118, 0.157, 0.135]
+    },
+    "14": {
+        "name": "Hyundai Tucson IX35 (2025)",
+        "year": 2025,
+        "fitted_test": "235/50 R19",
+        "prog_test": "235/50 R19",
+        "approved_tires": ["215/65 R17", "235/55 R18", "235/50 R19"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.729, 67.586, 88.500, 107.106, 126.875],
+        "diff": [2.271, 2.414, 1.500, 2.894, 3.125],
+        "sd": [0.707, 0.704, 1.168, 0.405, 0.859]
+    },
+    "15": {
+        "name": "Suzuki Ignis (2024)",
+        "year": 2024,
+        "fitted_test": "175/60 R16",
+        "prog_test": "175/60 R16",
+        "approved_tires": ["175/65 R15", "175/60 R16"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [46.190, 66.628, 85.927, 106.577, 125.385],
+        "diff": [3.810, 3.372, 4.073, 3.423, 4.615],
+        "sd": [0.171, 0.150, 0.255, 0.264, 0.152]
+    },
+    "16": {
+        "name": "Fiat 500X (2016)",
+        "year": 2016,
+        "fitted_test": "215/55 R17",
+        "prog_test": "215/60 R16",
+        "approved_tires": ["215/55 R17", "215/60 R16", "225/45 R18"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.874, 67.235, 87.604, 107.206, 126.919],
+        "diff": [2.126, 2.765, 2.396, 2.794, 3.081],
+        "sd": [0.143, 0.299, 0.503, 0.414, 0.212]
+    },
+    "GENERIC": {
+        "name_keys": {
+            "es": "Promedio Genérico de la Base de Datos (16 Vehículos)",
+            "ca": "Mitjana Genèrica de la Base de Dades (16 Vehicles)",
+            "en": "Generic Database Average (16 Vehicles)",
+            "it": "Media Generica del Database (16 Veicoli)"
+        },
+        "year": 2024,
+        "fitted_test": "225/50 R17",
+        "prog_test": "225/50 R17",
+        "approved_tires": ["205/60 R16", "225/50 R17", "255/45 R18"],
+        "speeds": [50, 70, 90, 110, 130],
+        "vbox": [47.6, 67.5, 87.5, 107.1, 126.9],
+        "diff": [2.4, 2.5, 2.5, 2.9, 3.1],
+        "sd": [0.4, 0.4, 0.4, 0.4, 0.4]
+    }
 }
 
 st.table(pd.DataFrame(breakdown_data))
