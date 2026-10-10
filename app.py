@@ -1,3 +1,4 @@
+import re
 import math
 import io
 import streamlit as st
@@ -897,15 +898,12 @@ t = TRANSLATIONS[lang_code]
 # ==========================================
 def parse_tire_str(tire_str):
     try:
-        clean = tire_str.strip().upper().replace("R", "").replace(" ", "")
-        parts = clean.split("/")
-        width = float(parts[0])
-        subparts = parts[1].split("-") if "-" in parts[1] else [parts[1]]
-        aspect = float(subparts[0])
-        rim = float(subparts[1]) if len(subparts) > 1 else float(parts[1][len(str(int(aspect))):])
-        return width, aspect, rim
-    except Exception:
-        return 225.0, 50.0, 17.0
+        m = re.search(r'(\d{3})\s*/\s*(\d{2})\s*[-/R\s]*\s*(\d{2})', str(tire_str))
+        if m:
+            return float(m.group(1)), float(m.group(2)), float(m.group(3))
+    except Exception as e:
+        pass
+    return 225.0, 50.0, 17.0
 
 def calc_tire_geometry(width, aspect, rim):
     rim_mm = rim * 25.4
